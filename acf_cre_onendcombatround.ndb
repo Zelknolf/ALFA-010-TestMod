@@ -1,5 +1,5 @@
 NDB V1.0
-0000063 0000009 0004056 0000011 0000056
+0000064 0000009 0004119 0000011 0000056
 n00 ginc_debug
 n01 x0_i0_enemy
 n02 x0_inc_generic
@@ -57,12 +57,13 @@ n53 x0_i0_spells
 n54 nwn2_inc_spells
 n55 acr_effects_i
 n56 acr_resting_i
-n57 acr_death_i
-n58 acr_spawn_i
-n59 acr_vfx_i
-n60 acr_quest_i
-n61 acr_creature_i
-N62 acf_cre_onendcombatround
+n57 acr_mobloot_i
+n58 acr_death_i
+n59 acr_spawn_i
+n60 acr_vfx_i
+n61 acr_quest_i
+n62 acr_creature_i
+N63 acf_cre_onendcombatround
 s 03 vector
 sf f x
 sf f y
@@ -1724,6 +1725,11 @@ f ffffffff ffffffff 001 v _SQLQueryInternal
 fp s
 f ffffffff ffffffff 001 i _SQLQueryReturnsValues
 fp s
+f ffffffff ffffffff 000 i CLASS_BLADESINGER
+f ffffffff ffffffff 000 i CLASS_LOREMASTER
+f ffffffff ffffffff 000 i CLASS_MYSTICTHEURGE
+f ffffffff ffffffff 000 i SPELL_LOREMASTER_GREATERLORE
+f ffffffff ffffffff 000 i SPELL_LOREMASTER_TRUELORE
 f ffffffff ffffffff 000 i SKILL_BALANCE
 f ffffffff ffffffff 000 i SKILL_CLIMB
 f ffffffff ffffffff 000 i SKILL_CRAFT__ALCHEMY
@@ -1833,6 +1839,37 @@ f ffffffff ffffffff 000 i FEAT_REGION_WATERDEEP
 f ffffffff ffffffff 000 i FEAT_REGION_WESTERN_HEARTLANDS
 f ffffffff ffffffff 000 i FEAT_REGION_WIZARDS_REACH
 f ffffffff ffffffff 000 i FEAT_REGION_OTHER
+f ffffffff ffffffff 000 i FEAT_BLADESINGER_SPELLCASTING_BARD
+f ffffffff ffffffff 000 i FEAT_BLADESINGER_SPELLCASTING_SORCERER
+f ffffffff ffffffff 000 i FEAT_BLADESINGER_SPELLCASTING_WIZARD
+f ffffffff ffffffff 000 i FEAT_BLADESINGER_BLADESONG_STYLE
+f ffffffff ffffffff 000 i FEAT_BLADESINGER_SONG_CELERITY
+f ffffffff ffffffff 000 i FEAT_BLADESINGER_SONG_FURY
+f ffffffff ffffffff 000 i FEAT_BLADESINGER_SPELLSONG
+f ffffffff ffffffff 000 i FEAT_BLADESINGER_SONG_CELERITY_2
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_WIZARD
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_CLERIC
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_DRUID
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_PALADIN
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_RANGER
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_SS
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_FS
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_BARD
+f ffffffff ffffffff 000 i FEAT_LOREMASTER_SPELLCASTING_SORCERER
+f ffffffff ffffffff 000 i FEAT_LORE
+f ffffffff ffffffff 000 i FEAT_BONUSLANGUAGE1
+f ffffffff ffffffff 000 i FEAT_BONUSLANGUAGE2
+f ffffffff ffffffff 000 i FEAT_GREATERLORE
+f ffffffff ffffffff 000 i FEAT_TRUELORE
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_WIZARD
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_CLERIC
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_DRUID
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_PALADIN
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_RANGER
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_SS
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_FS
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_BARD
+f ffffffff ffffffff 000 i FEAT_MYSTICTHEURGE_SPELLCASTING_SORCERER
 f ffffffff ffffffff 000 i ACR_PLAYER_FLAG_DEAD
 f ffffffff ffffffff 000 i ACR_PLAYER_FLAG_DYING
 f ffffffff ffffffff 000 i ACR_PLAYER_FLAG_SUBDUED
@@ -1973,6 +2010,8 @@ f ffffffff ffffffff 001 s GetBaseItemTypeName
 fp o
 f ffffffff ffffffff 001 i GetBaseSpellFailure
 fp o
+f ffffffff ffffffff 001 i GetTotalSpellFailure
+fp o
 f ffffffff ffffffff 001 s GetArmorTypeName
 fp o
 f ffffffff ffffffff 002 i GetHighestItemPropertyParam1
@@ -2015,6 +2054,29 @@ fp o
 f ffffffff ffffffff 001 i GetIsPlayer
 fp o
 f ffffffff ffffffff 001 s ACR_CleanCreatureNameTextForPlayers
+fp s
+f ffffffff ffffffff 002 i DeleteAllLocalsWithString
+fp o
+fp s
+f ffffffff ffffffff 001 s GetFeatSpellScript
+fp i
+f ffffffff ffffffff 001 v BroadcastToDMs
+fp s
+f ffffffff ffffffff 002 s Colorize
+fp s
+fp s
+f ffffffff ffffffff 009 o ACR_GetNearestCreatureToLocation
+fp o
+fp i
+fp i
+fp e2
+fp i
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 002 i DeleteAllLocalIntsWithString
+fp o
 fp s
 f ffffffff ffffffff 000 i DEBUG_TARGET_NONE
 f ffffffff ffffffff 000 i DEBUG_TARGET_DMS
@@ -5884,12 +5946,17 @@ fp e0
 fp i
 fp i
 f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_START
-f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_MAGE_ARMOR_SPELL
-f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_SHIELD_SPELL
 f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_RESTING
 f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_COMBAT_ACTION
+f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_FATIGUE
+f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_OOC_ADAPTION
+f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_FEAT_OFFSET
+f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_FEAT_END
+f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_SPELL_OFFSET
+f ffffffff ffffffff 000 i ACR_EFFECT_SOURCE_SPELL_END
 f ffffffff ffffffff 000 s ACR_EFFECT_FLAGS
 f ffffffff ffffffff 000 i ACR_EFFECT_FLAG_FATIGUED
+f ffffffff ffffffff 000 i ACR_EFFECT_FLAG_EXHAUSTED
 f ffffffff ffffffff 005 v ApplyEffectFromSource
 fp i
 fp i
@@ -5899,9 +5966,17 @@ fp f
 f ffffffff ffffffff 002 v RemoveAllEffectsFromSource
 fp o
 fp i
+f ffffffff ffffffff 003 v RemoveAllEffectsFromSourceRange
+fp o
+fp i
+fp i
+f ffffffff ffffffff 001 v RemoveAllFeatEffects
+fp o
 f ffffffff ffffffff 002 i GetIsTrackingEffectFor
 fp e0
 fp i
+f ffffffff ffffffff 001 i GetTrackingEffectSource
+fp e0
 f ffffffff ffffffff 002 i GetIsTrackingEffect
 fp e0
 fp i
@@ -5911,11 +5986,26 @@ fp i
 f ffffffff ffffffff 002 v ACR_SetIsFatigued
 fp o
 fp i
+f ffffffff ffffffff 002 v ACR_SetIsExhausted
+fp o
+fp i
+f ffffffff ffffffff 002 v ACR_SetAdaption
+fp o
+fp i
 f ffffffff ffffffff 001 i ACR_GetIsFatigued
 fp o
-f ffffffff ffffffff 001 e0 ACR_GetFatigueEffectOnPlayer
+f ffffffff ffffffff 001 i ACR_GetIsExhausted
 fp o
 f ffffffff ffffffff 000 e0 ACR_EffectFatigue
+f ffffffff ffffffff 000 e0 ACR_EffectExhausted
+f ffffffff ffffffff 000 e0 ACR_AdaptionEffect
+f ffffffff ffffffff 003 v ChangeEffectFromSource
+fp i
+fp o
+fp e0
+f ffffffff ffffffff 002 v ACR_SetAdaptionEffect
+fp o
+fp i
 f ffffffff ffffffff 000 i ACR_REST_ENABLED
 f ffffffff ffffffff 000 s ACR_REST_EFFECT_SOURCE
 f ffffffff ffffffff 000 s ACR_REST_FLAGS
@@ -6023,6 +6113,20 @@ fp o
 f ffffffff ffffffff 001 i _playerHasBedroll
 fp o
 f ffffffff ffffffff 001 i _playerHasTent
+fp o
+f ffffffff ffffffff 000 i _MOBLOOT_MIN_INT
+f ffffffff ffffffff 000 s _MOBLOOT_SYSTEM_NAME
+f ffffffff ffffffff 002 v _TransferAllItems
+fp o
+fp o
+f ffffffff ffffffff 003 v _TransferItem
+fp o
+fp o
+fp o
+f ffffffff ffffffff 002 v _CreatureLoot
+fp o
+fp o
+f ffffffff ffffffff 001 v ACR_CheckLootByMob
 fp o
 f ffffffff ffffffff 000 i SPELL_TRUE_RESURRECTION
 f ffffffff ffffffff 000 i ACR_DTH_CORPSE_DECAY
@@ -6689,8 +6793,8 @@ l09 0000067 00000167 00000167
 l09 0000068 00000167 00000167
 l09 0000069 00000167 00000167
 l09 0000070 00000167 00000167
-l62 0000046 00000179 0000017f
-l62 0000061 0000017f 00000181
-l61 0000230 00000181 000001a5
-l61 0000232 000001ab 000001c8
-l61 0000234 000001c8 000001ca
+l63 0000046 00000179 0000017f
+l63 0000061 0000017f 00000181
+l62 0000230 00000181 000001a5
+l62 0000232 000001ab 000001c8
+l62 0000234 000001c8 000001ca
