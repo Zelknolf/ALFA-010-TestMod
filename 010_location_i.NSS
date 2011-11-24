@@ -20,8 +20,6 @@ const int MONK_LVL_PER_BONUS = 3;
 const int HASTE_SPEED_FACTOR = 2;
 const int EXPED_RET_SPEED_FACTOR = 2;
 
-const string CHECK_COLOUR1 = "<color=#98FFFF>";
-const string CHECK_COLOUR2 = "<color=#0166FF>";
 const string CHECK_COLOUR_END = "</c>";
 
 /* calculates monk, barb bonus, does simple kludge for woodland stride
