@@ -1,5 +1,5 @@
 NDB V1.0
-0000064 0000008 0004121 0000106 0000799
+0000065 0000008 0004200 0000106 0000799
 n00 ginc_debug
 n01 x0_i0_enemy
 n02 x0_inc_generic
@@ -54,16 +54,17 @@ n50 nwn2_inc_metmag
 n51 x0_i0_spells
 n52 nwn2_inc_spells
 n53 acr_effects_i
-n54 acr_resting_i
-n55 acr_xp_i
-n56 acr_mobloot_i
-n57 acr_death_i
-n58 acr_spawn_i
-n59 acr_seamlessat_i
-n60 acr_quest_i
-n61 acr_area_i
-n62 acr_trigger_i
-N63 acf_trg_onexit
+n54 acr_xp_i
+n55 acr_skills_i
+n56 acr_resting_i
+n57 acr_mobloot_i
+n58 acr_death_i
+n59 acr_spawn_i
+n60 acr_seamlessat_i
+n61 acr_quest_i
+n62 acr_area_i
+n63 acr_trigger_i
+N64 acf_trg_onexit
 s 03 vector
 sf f x
 sf f y
@@ -1333,6 +1334,8 @@ f ffffffff ffffffff 000 i _ACR_SQL_SAQ_FLUSHALL
 f ffffffff ffffffff 000 i _ACR_SQL_DBCTRL_DATABASE_OFFLINE
 f ffffffff ffffffff 000 i _ACR_SQL_DBCTRL_ASYNC_PENDING
 f ffffffff ffffffff 000 i _ACR_SQL_QUERY_MAX_LEN
+f ffffffff ffffffff 000 s ACR_DTH_CORPSE_RESREF
+f ffffffff ffffffff 000 s ACR_DTH_BODY_RESREF
 f ffffffff ffffffff 000 v ACR_StartAsyncService
 f ffffffff ffffffff 001 v ACR_AsyncSQLQuery
 fp s
@@ -1461,11 +1464,23 @@ f ffffffff ffffffff 001 v _SQLQueryInternal
 fp s
 f ffffffff ffffffff 001 i _SQLQueryReturnsValues
 fp s
+f ffffffff ffffffff 000 s ACR_NWN_GOLD_TAG
 f ffffffff ffffffff 000 i CLASS_BLADESINGER
 f ffffffff ffffffff 000 i CLASS_LOREMASTER
 f ffffffff ffffffff 000 i CLASS_MYSTICTHEURGE
+f ffffffff ffffffff 000 i RACIAL_TYPE_PLANT
+f ffffffff ffffffff 000 i SPELL_RECALL_SPIRIT
 f ffffffff ffffffff 000 i SPELL_LOREMASTER_GREATERLORE
 f ffffffff ffffffff 000 i SPELL_LOREMASTER_TRUELORE
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_1
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_2
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_3
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_4
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_5
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_6
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_7
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_8
+f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_9
 f ffffffff ffffffff 000 i SKILL_BALANCE
 f ffffffff ffffffff 000 i SKILL_CLIMB
 f ffffffff ffffffff 000 i SKILL_CRAFT__ALCHEMY
@@ -1678,6 +1693,8 @@ f ffffffff ffffffff 000 i MAX_INT
 f ffffffff ffffffff 000 i MIN_INT
 f ffffffff ffffffff 000 f MAX_FLOAT
 f ffffffff ffffffff 000 f MIN_FLOAT
+f ffffffff ffffffff 000 f MAX_RND_FLOAT
+f ffffffff ffffffff 000 i MAX_RND_INT
 f ffffffff ffffffff 000 i INT_SIZE
 f ffffffff ffffffff 000 i DAYS_PER_MONTH
 f ffffffff ffffffff 000 f PC_PERCEPTION_RANGE
@@ -1732,6 +1749,9 @@ fp s
 fp i
 fp i
 f ffffffff ffffffff 002 f ACR_RandomFloat
+fp f
+fp f
+f ffffffff ffffffff 002 f ACR_RandomNormal
 fp f
 fp f
 f ffffffff ffffffff 003 i GetPiecewiseInteger
@@ -1797,6 +1817,12 @@ fp s
 f ffffffff ffffffff 001 s GetFeatSpellScript
 fp i
 f ffffffff ffffffff 001 v BroadcastToDMs
+fp s
+f ffffffff ffffffff 001 i IsVowel
+fp s
+f ffffffff ffffffff 001 s GetArticle
+fp s
+f ffffffff ffffffff 001 s Pluralize
 fp s
 f ffffffff ffffffff 002 s Colorize
 fp s
@@ -2012,6 +2038,8 @@ f ffffffff ffffffff 000 v ACR_LogModuleLoaded
 f ffffffff ffffffff 000 f DAY_TO_SECONDS
 f ffffffff ffffffff 000 f HOUR_TO_SECONDS
 f ffffffff ffffffff 000 i TIME_YEAR_START
+f ffffffff ffffffff 000 i ALFA2_FR_YEAR_START
+f ffffffff ffffffff 000 i ALFA2_RL_YEAR_START
 f ffffffff ffffffff 000 s _TIME_RATIO_LF
 f ffffffff ffffffff 000 s ACR_MODULE_TIME
 f ffffffff ffffffff 000 v ACR_InitializeTime
@@ -2021,6 +2049,7 @@ f ffffffff ffffffff 001 f ACR_GameMinutesToRealSeconds
 fp f
 f ffffffff ffffffff 001 f ACR_GameSecondsToRealSeconds
 fp f
+f ffffffff ffffffff 000 i ACR_GetGameMillisecondsSinceStart
 f ffffffff ffffffff 000 i ACR_GetGameSecondsSinceStart
 f ffffffff ffffffff 000 i ACR_GetGameMinutesSinceStart
 f ffffffff ffffffff 000 i ACR_GetGameHoursSinceStart
@@ -2030,11 +2059,32 @@ f ffffffff ffffffff 000 i ACR_GetGameYearsSinceStart
 f ffffffff ffffffff 001 f ACR_GetSecondsUntilNextHour
 fp i
 f ffffffff ffffffff 000 f ACR_GetGameToRealTimeRatio
-f ffffffff ffffffff 000 i ACR_GetDayOfTenday
+f ffffffff ffffffff 001 i ACR_GetDayOfTenday
+fp i
 f ffffffff ffffffff 000 v ACR_StoreTime
 f ffffffff ffffffff 000 i ACR_GetTimeStampInMinutes
 f ffffffff ffffffff 001 i ACR_GetTimeStampInHours
 fp i
+f ffffffff ffffffff 006 s ACR_FRDateToString
+fp i
+fp i
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 000 i ACR_GetFRYear
+f ffffffff ffffffff 001 s ACR_GetFRYearName
+fp i
+f ffffffff ffffffff 000 i ACR_GetFRMonth
+f ffffffff ffffffff 000 i ACR_GetFRDay
+f ffffffff ffffffff 000 i ACR_GetFRTenday
+f ffffffff ffffffff 000 i ACR_GetFRHoliday
+f ffffffff ffffffff 003 s ACR_ConvertDate
+fp i
+fp i
+fp i
+f ffffffff ffffffff 000 v _CalcDate
+f ffffffff ffffffff 000 i ACR_GetFRWeekday
 f ffffffff ffffffff 000 i ACR_PTL_COOLDOWN
 f ffffffff ffffffff 000 s _ACR_PTL_PASSPORT
 f ffffffff ffffffff 000 s _ACR_PTL_RECORD
@@ -5982,6 +6032,8 @@ f ffffffff ffffffff 001 i ACR_GetIsFatigued
 fp o
 f ffffffff ffffffff 001 i ACR_GetIsExhausted
 fp o
+f ffffffff ffffffff 001 i ACR_AddFatigueToCreature
+fp o
 f ffffffff ffffffff 000 e0 ACR_EffectFatigue
 f ffffffff ffffffff 000 e0 ACR_EffectExhausted
 f ffffffff ffffffff 000 e0 ACR_AdaptionEffect
@@ -5992,114 +6044,6 @@ fp e0
 f ffffffff ffffffff 002 v ACR_SetAdaptionEffect
 fp o
 fp i
-f ffffffff ffffffff 000 i ACR_REST_ENABLED
-f ffffffff ffffffff 000 s ACR_REST_EFFECT_SOURCE
-f ffffffff ffffffff 000 s ACR_REST_FLAGS
-f ffffffff ffffffff 000 s ACR_REST_TIMER
-f ffffffff ffffffff 000 s ACR_REST_NAP_TIMER
-f ffffffff ffffffff 000 s ACR_REST_PRAYER_TIMER
-f ffffffff ffffffff 000 s ACR_REST_STUDY_TIMER
-f ffffffff ffffffff 000 s ACR_REST_LOGOUT_TIMER
-f ffffffff ffffffff 000 s ACR_REST_HEAL_BONUS
-f ffffffff ffffffff 000 s ACR_REST_NOT_TIRED
-f ffffffff ffffffff 000 s ACR_REST_HP
-f ffffffff ffffffff 000 s ACR_REST_ZONE
-f ffffffff ffffffff 000 s ACR_REST_BONUS
-f ffffffff ffffffff 000 s ACR_REST_STRENGTH
-f ffffffff ffffffff 000 s ACR_REST_CONSTITUTION
-f ffffffff ffffffff 000 s ACR_REST_DEXTERITY
-f ffffffff ffffffff 000 s ACR_REST_INTELLIGENCE
-f ffffffff ffffffff 000 s ACR_REST_WISDOM
-f ffffffff ffffffff 000 s ACR_REST_CHARISMA
-f ffffffff ffffffff 000 s ACR_REST_DISEASE
-f ffffffff ffffffff 000 s ACR_REST_DISEASE_CHANCE
-f ffffffff ffffffff 000 s ACR_REST_TENT
-f ffffffff ffffffff 000 s ACR_REST_BEDROLL
-f ffffffff ffffffff 000 s ACR_REST_OFFCAMERA_DAYS
-f ffffffff ffffffff 000 s ACR_REST_TENT_TAG
-f ffffffff ffffffff 000 s ACR_REST_BEDROLL_TAG
-f ffffffff ffffffff 000 s ACR_REST_CAMPFIRE_TAG
-f ffffffff ffffffff 000 i ACR_REST_FLAG_FATIGUED
-f ffffffff ffffffff 000 i ACR_REST_FLAG_NAPPING
-f ffffffff ffffffff 000 i ACR_REST_FLAG_PRAYING
-f ffffffff ffffffff 000 i ACR_REST_FLAG_STUDYING
-f ffffffff ffffffff 000 i ACR_REST_FLAG_LTM_CARE
-f ffffffff ffffffff 000 i ACR_REST_CYCLE
-f ffffffff ffffffff 000 i ACR_REST_MIN_BONUS
-f ffffffff ffffffff 000 i ACR_REST_ZONE_ILLEGAL
-f ffffffff ffffffff 000 i ACR_REST_ZONE_INTERIOR
-f ffffffff ffffffff 000 i ACR_REST_ZONE_EXTERIOR
-f ffffffff ffffffff 000 f ACR_REST_PRAY_DURATION
-f ffffffff ffffffff 000 f ACR_REST_STUDY_DURATION
-f ffffffff ffffffff 000 f ACR_REST_DURATION
-f ffffffff ffffffff 000 f ACR_REST_NAP_DURATION
-f ffffffff ffffffff 000 s ACR_REST_MSG_NOT_REST
-f ffffffff ffffffff 000 s ACR_REST_MSG_NOT_WELL
-f ffffffff ffffffff 000 s ACR_REST_MSG_NOT_TIRED
-f ffffffff ffffffff 000 s ACR_REST_MSG_FATIGUED
-f ffffffff ffffffff 000 s ACR_IS_TRAVELMAP
-f ffffffff ffffffff 002 v ACR_OnPlayerRest
-fp o
-fp i
-f ffffffff ffffffff 001 v ACR_RestOnClientLeave
-fp o
-f ffffffff ffffffff 001 v ACR_RestOnClientEnter
-fp o
-f ffffffff ffffffff 002 v ACR_SetLongTermCare
-fp o
-fp i
-f ffffffff ffffffff 002 v ACR_SetHealBonus
-fp o
-fp i
-f ffffffff ffffffff 001 i ACR_GetHealBonus
-fp o
-f ffffffff ffffffff 001 v ACR_PrayForSpells
-fp o
-f ffffffff ffffffff 001 v ACR_StudyForSpells
-fp o
-f ffffffff ffffffff 001 v ACR_RestTriggerEnter
-fp o
-f 000002d5 000003a2 001 v ACR_RestTriggerExit
-fp o
-f ffffffff ffffffff 001 i _playerCanRest
-fp o
-f ffffffff ffffffff 003 v _playerRestoreSpells
-fp o
-fp s
-fp i
-f ffffffff ffffffff 001 v _playerRestStart
-fp o
-f ffffffff ffffffff 001 v _playerRestFinish
-fp o
-f ffffffff ffffffff 001 v _playerRestCancel
-fp o
-f ffffffff ffffffff 001 v _applySleepEffects
-fp o
-f ffffffff ffffffff 001 v _removeSleepEffects
-fp o
-f ffffffff ffffffff 002 v _healFromRest
-fp o
-fp i
-f ffffffff ffffffff 002 v _unhealFromRest
-fp o
-fp i
-f ffffffff ffffffff 001 i _getAreaRestBonus
-fp o
-f ffffffff ffffffff 001 i _getCustomRestBonus
-fp o
-f ffffffff ffffffff 001 o _getPCFamiliar
-fp o
-f ffffffff ffffffff 001 v _garbageCollection
-fp o
-f ffffffff ffffffff 002 v _ProcessOffCameraRest
-fp o
-fp i
-f ffffffff ffffffff 001 i _getArmorRestDC
-fp o
-f ffffffff ffffffff 001 i _playerHasBedroll
-fp o
-f ffffffff ffffffff 001 i _playerHasTent
-fp o
 f ffffffff ffffffff 000 s _STORED_XP
 f ffffffff ffffffff 000 f _RPXP_SCRIPT_ANCHOR
 f ffffffff ffffffff 000 s _BANKED_RPXP_INCREMENTS
@@ -6172,6 +6116,219 @@ fp o
 f ffffffff ffffffff 002 f _AdjustXPForParty
 fp f
 fp i
+f ffffffff ffffffff 000 i ACR_SKILLS_NUMBER
+f ffffffff ffffffff 000 s CHECK_COLOUR1
+f ffffffff ffffffff 000 s CHECK_COLOUR2
+f ffffffff ffffffff 006 i ACR_SkillCheck
+fp i
+fp o
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 006 i ACR_SaveCheck
+fp i
+fp o
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 006 i ACR_StatCheck
+fp i
+fp o
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 005 i ACR_SimpleRoll
+fp o
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 001 s ACR_GetBicFileName
+fp o
+f ffffffff ffffffff 001 s ACR_GetBicPath
+fp o
+f ffffffff ffffffff 001 i ACR_GetIsSkillRemoved
+fp i
+f ffffffff ffffffff 001 v ACR_SkillsOnPCLevelUp
+fp o
+f ffffffff ffffffff 001 v ACR_SkillsOnClientEnter
+fp o
+f ffffffff ffffffff 001 v ACR_SkillsOnPCLoaded
+fp o
+f ffffffff ffffffff 001 v ACR_SkillsOnClientExit
+fp o
+f ffffffff ffffffff 001 i ACR_SkillsCheckIsPCAdapted
+fp o
+f ffffffff ffffffff 001 v ACR_SkillsPrepareAdaption
+fp o
+f ffffffff ffffffff 002 i _IsClassSkill
+fp i
+fp o
+f ffffffff ffffffff 001 v _ReLevelPC
+fp o
+f ffffffff ffffffff 002 v _AdjustAlignmentForLevel
+fp i
+fp o
+f ffffffff ffffffff 001 v _ReturnXPforRebuild
+fp o
+f ffffffff ffffffff 001 v _RebuildCleanup
+fp o
+f ffffffff ffffffff 001 v _StripDivineFeats
+fp o
+f ffffffff ffffffff 001 v _ApplyAdaptionEffects
+fp o
+f ffffffff ffffffff 001 v _StripAdaptionEffects
+fp o
+f ffffffff ffffffff 001 s _SkillIdToString
+fp i
+f ffffffff ffffffff 001 s _StatIdToString
+fp i
+f ffffffff ffffffff 001 s _SaveIdToString
+fp i
+f ffffffff ffffffff 007 i _HandleRoll
+fp o
+fp s
+fp i
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 003 i _LookupSynergy
+fp i
+fp o
+fp i
+f ffffffff ffffffff 006 s _FormatCheck
+fp s
+fp i
+fp i
+fp s
+fp i
+fp i
+f ffffffff ffffffff 003 v _SendRollMessage
+fp o
+fp s
+fp i
+f ffffffff ffffffff 005 i ACR_InitCheck
+fp o
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 000 i ACR_REST_ENABLED
+f ffffffff ffffffff 000 s ACR_REST_EFFECT_SOURCE
+f ffffffff ffffffff 000 s ACR_REST_FLAGS
+f ffffffff ffffffff 000 s ACR_REST_TIMER
+f ffffffff ffffffff 000 s ACR_REST_NAP_TIMER
+f ffffffff ffffffff 000 s ACR_REST_PRAYER_TIMER
+f ffffffff ffffffff 000 s ACR_REST_STUDY_TIMER
+f ffffffff ffffffff 000 s ACR_REST_LOGOUT_TIMER
+f ffffffff ffffffff 000 s ACR_REST_HEAL_BONUS
+f ffffffff ffffffff 000 s ACR_REST_NOT_TIRED
+f ffffffff ffffffff 000 s ACR_REST_HP
+f ffffffff ffffffff 000 s ACR_REST_ZONE
+f ffffffff ffffffff 000 s ACR_REST_BONUS
+f ffffffff ffffffff 000 s ACR_REST_STRENGTH
+f ffffffff ffffffff 000 s ACR_REST_CONSTITUTION
+f ffffffff ffffffff 000 s ACR_REST_DEXTERITY
+f ffffffff ffffffff 000 s ACR_REST_INTELLIGENCE
+f ffffffff ffffffff 000 s ACR_REST_WISDOM
+f ffffffff ffffffff 000 s ACR_REST_CHARISMA
+f ffffffff ffffffff 000 s ACR_REST_DISEASE
+f ffffffff ffffffff 000 s ACR_REST_DISEASE_CHANCE
+f ffffffff ffffffff 000 s ACR_REST_TENT
+f ffffffff ffffffff 000 s ACR_REST_BEDROLL
+f ffffffff ffffffff 000 s ACR_REST_OFFCAMERA_DAYS
+f ffffffff ffffffff 000 s ACR_REST_TENT_TAG
+f ffffffff ffffffff 000 s ACR_REST_BEDROLL_TAG
+f ffffffff ffffffff 000 s ACR_REST_CAMPFIRE_TAG
+f ffffffff ffffffff 000 i ACR_REST_FLAG_FATIGUED
+f ffffffff ffffffff 000 i ACR_REST_FLAG_NAPPING
+f ffffffff ffffffff 000 i ACR_REST_FLAG_PRAYING
+f ffffffff ffffffff 000 i ACR_REST_FLAG_STUDYING
+f ffffffff ffffffff 000 i ACR_REST_FLAG_LTM_CARE
+f ffffffff ffffffff 000 i ACR_REST_CYCLE
+f ffffffff ffffffff 000 i ACR_REST_MIN_BONUS
+f ffffffff ffffffff 000 i ACR_REST_ZONE_ILLEGAL
+f ffffffff ffffffff 000 i ACR_REST_ZONE_INTERIOR
+f ffffffff ffffffff 000 i ACR_REST_ZONE_EXTERIOR
+f ffffffff ffffffff 000 i ACR_REST_TYPE_VALID
+f ffffffff ffffffff 000 i ACR_REST_TYPE_INVALID
+f ffffffff ffffffff 000 i ACR_REST_TYPE_NOTTIRED
+f ffffffff ffffffff 000 f ACR_REST_MAX_TENT_DIST
+f ffffffff ffffffff 000 f ACR_REST_PRAY_DURATION
+f ffffffff ffffffff 000 f ACR_REST_STUDY_DURATION
+f ffffffff ffffffff 000 f ACR_REST_DURATION
+f ffffffff ffffffff 000 f ACR_REST_NAP_DURATION
+f ffffffff ffffffff 000 s ACR_REST_MSG_NOT_REST
+f ffffffff ffffffff 000 s ACR_REST_MSG_NOT_WELL
+f ffffffff ffffffff 000 s ACR_REST_MSG_NOT_TIRED
+f ffffffff ffffffff 000 s ACR_REST_MSG_FATIGUED
+f ffffffff ffffffff 000 s ACR_IS_TRAVELMAP
+f ffffffff ffffffff 002 v ACR_OnPlayerRest
+fp o
+fp i
+f ffffffff ffffffff 001 v ACR_RestOnClientLeave
+fp o
+f ffffffff ffffffff 001 v ACR_RestOnClientEnter
+fp o
+f ffffffff ffffffff 002 v ACR_SetLongTermCare
+fp o
+fp i
+f ffffffff ffffffff 002 v ACR_SetHealBonus
+fp o
+fp i
+f ffffffff ffffffff 001 i ACR_GetHealBonus
+fp o
+f ffffffff ffffffff 001 v ACR_PrayForSpells
+fp o
+f ffffffff ffffffff 001 v ACR_StudyForSpells
+fp o
+f ffffffff ffffffff 001 v ACR_RestTriggerEnter
+fp o
+f 000002d5 000003a2 001 v ACR_RestTriggerExit
+fp o
+f ffffffff ffffffff 001 i _playerCanRest
+fp o
+f ffffffff ffffffff 003 v _playerRestoreSpells
+fp o
+fp s
+fp i
+f ffffffff ffffffff 001 v _playerRestStart
+fp o
+f ffffffff ffffffff 001 v _playerRestFinish
+fp o
+f ffffffff ffffffff 001 v _playerRestCancel
+fp o
+f ffffffff ffffffff 001 v _applySleepEffects
+fp o
+f ffffffff ffffffff 001 v _removeSleepEffects
+fp o
+f ffffffff ffffffff 002 v _healFromRest
+fp o
+fp i
+f ffffffff ffffffff 002 v _unhealFromRest
+fp o
+fp i
+f ffffffff ffffffff 001 i _getAreaRestBonus
+fp o
+f ffffffff ffffffff 001 i _getCustomRestBonus
+fp o
+f ffffffff ffffffff 001 o _getPCFamiliar
+fp o
+f ffffffff ffffffff 001 v _garbageCollection
+fp o
+f ffffffff ffffffff 002 v _ProcessOffCameraRest
+fp o
+fp i
+f ffffffff ffffffff 001 i _getArmorRestDC
+fp o
+f ffffffff ffffffff 001 i _playerHasBedroll
+fp o
+f ffffffff ffffffff 001 i _playerHasTent
+fp o
 f ffffffff ffffffff 000 i ACR_PSO_RECORD_USERS
 f ffffffff ffffffff 000 i _ACR_PSO_EXPORT_PC_ONSAVE
 f ffffffff ffffffff 000 i _ACR_PSO_EXPORT_DM_ONSAVE
@@ -6224,6 +6381,10 @@ fp o
 f ffffffff ffffffff 001 i _GetAreContentsLoaded
 fp o
 f ffffffff ffffffff 000 i _MOBLOOT_MIN_INT
+f ffffffff ffffffff 000 f _MOBLOOT_DELAY
+f ffffffff ffffffff 000 f _MOBLOOT_DISTANCE
+f ffffffff ffffffff 000 i _MOBLOOT_LOOT_ITEM_CHANCE
+f ffffffff ffffffff 000 i _MOBLOOT_LOOT_CREATURE_CHANCE
 f ffffffff ffffffff 000 s _MOBLOOT_SYSTEM_NAME
 f ffffffff ffffffff 002 v _TransferAllItems
 fp o
@@ -6232,22 +6393,24 @@ f ffffffff ffffffff 003 v _TransferItem
 fp o
 fp o
 fp o
+f ffffffff ffffffff 002 v _CreatureCheckLoot
+fp o
+fp s
 f ffffffff ffffffff 002 v _CreatureLoot
 fp o
-fp o
+fp s
 f ffffffff ffffffff 001 v ACR_CheckLootByMob
 fp o
 f ffffffff ffffffff 000 i SPELL_TRUE_RESURRECTION
 f ffffffff ffffffff 000 i ACR_DTH_CORPSE_DECAY
 f ffffffff ffffffff 000 i ACR_DTH_PERCENT_CHANCE
 f ffffffff ffffffff 000 s ACR_DTH_UNDERTAKER_RESREF
-f ffffffff ffffffff 000 s ACR_DTH_CORPSE_RESREF
-f ffffffff ffffffff 000 s ACR_DTH_BODY_RESREF
 f ffffffff ffffffff 000 s ACR_DTH_MORGUE_AR_TAG
 f ffffffff ffffffff 000 s ACR_DTH_MORGUE_WP_TAG
 f ffffffff ffffffff 000 s ACR_DTH_WAYPOINT
 f ffffffff ffffffff 000 s ACR_DTH_LOCATION
 f ffffffff ffffffff 000 s ACR_DTH_TIMESTAMP
+f ffffffff ffffffff 000 s ACR_DTH_INSTANT
 f ffffffff ffffffff 000 s ACR_DTH_HITPOINTS
 f ffffffff ffffffff 000 s ACR_DTH_NUM_ROUNDS
 f ffffffff ffffffff 000 s ACR_DTH_DEBUG_ID
@@ -6255,6 +6418,8 @@ f ffffffff ffffffff 000 f _ACR_DTH_HOSTILE_DELAY
 f ffffffff ffffffff 000 f _ACR_DTH_RADIUS
 f ffffffff ffffffff 000 i _ACR_DTH_FLOOR
 f ffffffff ffffffff 000 s _ACR_DTH_DAMAGER
+f ffffffff ffffffff 000 s _ACR_DTH_RECALLABLE
+f ffffffff ffffffff 000 f ACR_DTH_RECALL_SPIRIT_WINDOW
 f ffffffff ffffffff 002 v ACR_PlayerOnDeath
 fp o
 fp o
@@ -6299,6 +6464,8 @@ fp o
 f ffffffff ffffffff 001 o ACR_GetPlayerFromCorpse
 fp o
 f ffffffff ffffffff 001 v ACR_StabilizePlayer
+fp o
+f ffffffff ffffffff 001 i ACR_CanCorpseBeRecalled
 fp o
 f ffffffff ffffffff 001 v _applyDeathEffects
 fp o
@@ -6582,7 +6749,8 @@ fp o
 fp e2
 fp i
 fp i
-f ffffffff ffffffff 000 v _BuffSelf
+f ffffffff ffffffff 001 v ActivateLongTermBuffs
+fp o
 f ffffffff ffffffff 002 e2 _RandomizeLocation
 fp e2
 fp f
@@ -6599,6 +6767,10 @@ fp f
 fp f
 fp f
 f ffffffff ffffffff 001 v _RunSpawnIsActiveLoop
+fp o
+f ffffffff ffffffff 003 v _QuickBuff
+fp o
+fp i
 fp o
 f ffffffff ffffffff 000 s ACR_SAT_SEAMLESSAT_TAG
 f ffffffff ffffffff 000 i iDefaultAreaSize
@@ -6722,10 +6894,11 @@ fp o
 fp i
 f ffffffff ffffffff 001 v _despawnQuestCreature
 fp o
+f ffffffff ffffffff 000 s ACR_AREA_LAST_AREA_CLIENTENTER_VAR
 f ffffffff ffffffff 000 v ACR_AreaOnHeartbeat
 f ffffffff ffffffff 000 v ACR_AreaOnEnter
 f ffffffff ffffffff 000 v ACR_AreaOnExit
-f ffffffff ffffffff 000 v ACR_AreaOnClientEnter
+f ffffffff ffffffff 000 i ACR_AreaOnClientEnter
 f ffffffff ffffffff 000 v ACR_AreaOnUserDefined
 f ffffffff ffffffff 000 v ACR_OnAreaTransitionClick
 f ffffffff ffffffff 000 v ACR_TriggerOnEnter
@@ -6887,29 +7060,29 @@ l08 0000113 00000167 00000167
 l08 0000114 00000167 00000167
 l08 0000115 00000167 00000167
 l08 0000116 00000167 00000167
-l63 0000047 00000179 0000017f
-l63 0000050 0000017f 00000181
-l62 0000103 00000181 00000196
-l62 0000106 00000196 000001b1
-l62 0000109 000001c5 000001d3
-l62 0000112 000001d3 000001e7
-l62 0000113 000001ed 000001ef
-l59 0000262 000001ef 00000211
-l59 0000264 00000217 0000023d
-l59 0000265 0000023d 00000260
-l59 0000268 00000260 00000266
-l59 0000269 0000026c 0000026e
-l59 0000272 00000293 000002b9
-l59 0000274 000002b9 000002bf
-l59 0000275 000002c5 000002c7
-l59 0000277 000002c7 000002cd
-l59 0000279 000002cd 000002d5
-l54 0000580 000002d5 0000030e
-l54 0000583 00000314 00000332
-l54 0000584 00000332 00000351
-l54 0000585 00000351 00000379
-l54 0000586 00000379 0000039a
-l54 0000588 0000039a 000003a2
+l64 0000047 00000179 0000017f
+l64 0000050 0000017f 00000181
+l63 0000103 00000181 00000196
+l63 0000106 00000196 000001b1
+l63 0000109 000001c5 000001d3
+l63 0000112 000001d3 000001e7
+l63 0000113 000001ed 000001ef
+l60 0000262 000001ef 00000211
+l60 0000264 00000217 0000023d
+l60 0000265 0000023d 00000260
+l60 0000268 00000260 00000266
+l60 0000269 0000026c 0000026e
+l60 0000272 00000293 000002b9
+l60 0000274 000002b9 000002bf
+l60 0000275 000002c5 000002c7
+l60 0000277 000002c7 000002cd
+l60 0000279 000002cd 000002d5
+l56 0000589 000002d5 0000030e
+l56 0000592 00000314 00000332
+l56 0000593 00000332 00000351
+l56 0000594 00000351 00000379
+l56 0000595 00000379 0000039a
+l56 0000597 0000039a 000003a2
 l19 0000318 000003a2 000003e0
 l19 0000319 000003e0 00000420
 l19 0000320 00000420 0000045e
