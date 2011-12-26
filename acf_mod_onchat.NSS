@@ -44,22 +44,22 @@
 // Function Definitions ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-int TEMP_ModuleOnChat(object oSpeaker, object oTarget, int nMode, string sText);
-
 int StartingConditional(object oSpeaker, object oTarget, int nMode, string sText) {
 
     //SendMessageToPC(oSpeaker, "You said: "+sText+", heard by "+GetName(oTarget));
 	//SendMessageToPC(oTarget, "You heard "+GetName(oSpeaker)+" say: "+sText);
 	
 	// ACR hook for OnChat event. Run this first in case the text needs to be suppressed.
-	if (TEMP_ModuleOnChat(oSpeaker, oTarget, nMode, sText) != TRUE) {
+	if (ACR_ModuleOnChat(oSpeaker, oTarget, nMode, sText) != TRUE) {
 		return FALSE;
 	}
-	
+	SendMessageToPC(oSpeaker, GetRawHairTintSet(oSpeaker));
+    SendMessageToPC(oSpeaker, GetRawBodyTintSet(oCharacter));
+	SendMessageToPC(oSpeaker, GetRawHeadTintSet(oCharacter));
     // Custom code goes below this line. Module scripts can supress chat text by returning false here.
 	return TRUE;
 }
-
+/*
 int TEMP_ModuleOnChat(object oSpeaker, object oTarget, int nMode, string sText)
 {
 	//iterate the RPXP function to indicate an active PC
@@ -709,4 +709,4 @@ int TEMP_ModuleOnChat(object oSpeaker, object oTarget, int nMode, string sText)
 	}
 
 	return TRUE;
-}
+}*/
