@@ -54,8 +54,8 @@ int StartingConditional(object oSpeaker, object oTarget, int nMode, string sText
 		return FALSE;
 	}
 	SendMessageToPC(oSpeaker, GetRawHairTintSet(oSpeaker));
-    SendMessageToPC(oSpeaker, GetRawBodyTintSet(oCharacter));
-	SendMessageToPC(oSpeaker, GetRawHeadTintSet(oCharacter));
+    SendMessageToPC(oSpeaker, GetRawBodyTintSet(oSpeaker));
+	SendMessageToPC(oSpeaker, GetRawHeadTintSet(oSpeaker));
     // Custom code goes below this line. Module scripts can supress chat text by returning false here.
 	return TRUE;
 }
