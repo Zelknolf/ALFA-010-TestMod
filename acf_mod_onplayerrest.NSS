@@ -46,27 +46,7 @@
 
 void main()
 {
-	effect e;
-	object player = GetLastPCRested();
-	string str;
+    ACR_ModuleOnPlayerRest();
 	
-	/* remove fatigue/exhaustion */
-	e = GetFirstEffect(player);
-	str = loc_global_name(player,"fatigue");
-	SetGlobalInt(str, 0);
-	
-	while (GetIsEffectValid(e)) {
-	
-		SendMessageToPC(player, "("+IntToString(GetEffectType(e)) + "," + IntToString(GetEffectSubType(e)) + ")");
-		
-		/* fix fatigue effects */
-		if (is_fatigue_effect(e))
-			RemoveEffect(player, e);
-		
-		e = GetNextEffect(player);
-	}
-	
-	ACR_ModuleOnPlayerRest();
-		
-	// Custom code goes below this line.
+    // Custom code goes below this line.
 }
