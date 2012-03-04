@@ -1,3 +1,5 @@
+#include "acr_xp_i"
+
 int GoldToXP(int nGold, object oPC)
 {
 	int nHD = GetHitDice(oPC);
@@ -43,7 +45,7 @@ void main(string sQuest, int nAct)
 			SetLocalInt(GetModule(), sPC+"SSIL_WORK", 5);
 			int nGold = 5;
 			int nXP = GoldToXP(5, oPC);
-			GiveXPToCreature(oPC, nXP);
+			ACR_AwardStaticQuestXP(oPC, "010_sel_ssildiplo", nXP);
 			GiveGoldToCreature(oPC, nGold, TRUE);
 		}
 	}
