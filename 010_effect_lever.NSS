@@ -17,6 +17,16 @@ void main()
 		int nInt8 =  GetEffectInteger(eEffect, 8);
 		int nInt9 =  GetEffectInteger(eEffect, 9);
 		int nInt10 = GetEffectInteger(eEffect, 10);
+		SendMessageToPC(oPC, "1 = "+IntToString(nInt1)+
+		                "  2 = "+IntToString(nInt2)+
+						"  3 = "+IntToString(nInt3)+
+						"  4 = "+IntToString(nInt4)+
+						"  5 = "+IntToString(nInt5)+
+						"  6 = "+IntToString(nInt6)+
+						"  7 = "+IntToString(nInt7)+
+						"  8 = "+IntToString(nInt8)+
+						"  9 = "+IntToString(nInt9)+
+						"  10 = "+IntToString(nInt10));
 		eEffect = GetNextEffect(oPC);
 	}
 }
