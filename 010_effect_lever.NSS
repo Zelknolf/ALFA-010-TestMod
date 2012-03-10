@@ -1,8 +1,9 @@
 void main()
 {
 	object oPC = GetLastUsedBy();
-	ApplyEffectToObject(DURATION_TYPE_TEMPORARY, EffectACIncrease(12), oPC, 5.0f);
-	ApplyEffectToObject(DURATION_TYPE_TEMPORARY, EffectACDecrease(15), oPC, 5.0f);
+	ApplyEffectToObject(DURATION_TYPE_TEMPORARY, EffectACIncrease(12, AC_DEFLECTION_BONUS, AC_VS_DAMAGE_TYPE_ALL, FALSE), oPC, 5.0f);
+	ApplyEffectToObject(DURATION_TYPE_TEMPORARY, EffectACIncrease(12, AC_DEFLECTION_BONUS, AC_VS_DAMAGE_TYPE_ALL, TRUE), oPC, 5.0f);
+	ApplyEffectToObject(DURATION_TYPE_TEMPORARY, EffectACDecrease(15, AC_NATURAL_BONUS), oPC, 5.0f);
 	
 	effect eEffect = GetFirstEffect(oPC);
 	while(GetIsEffectValid(eEffect))
