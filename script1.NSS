@@ -539,29 +539,28 @@ void main()
             else                                    sAlignIcon += "ce.tga";
         }
 
-        SendMessageToPC(oRowPC, GetDeity(oRowPC));
 		
-		string sDeity = "";
-		int nDeity;
+        string sDeity = GetDeity(oRowPC);
+        int nDeity;
 
-		if(sDeity == "No Deity")           nDeity = 0;
-		if(sDeity == "Ao")                 nDeity = 1;
-		if(sDeity == "Aerdrie Faenya")     nDeity = 2;
-		if(sDeity == "Angharradh")         nDeity = 3;
-		if(sDeity == "Corellon Larethian") nDeity = 4;		
-		if(sDeity == "Erevan Ilesere")     nDeity = 5;
-		if(sDeity == "Fenmarel Mestarine") nDeity = 6;
-		if(sDeity == "Hanali Celanil")     nDeity = 7;
-		if(sDeity == "Labelas Enoreth")    nDeity = 8;
-		if(sDeity == "Rillfane Rallathil") nDeity = 9;
-		if(sDeity == "Sehanine Moonbow")   nDeity = 10;
-		if(sDeity == "Shevarash")          nDeity = 11;
-		if(sDeity == "Solonor Thelandira") nDeity = 12;
-		if(sDeity == "Eilistraee")         nDeity = 13;
-		if(sDeity == "Ghaunadaur")         nDeity = 14;
-		if(sDeity == "Kiransalee")         nDeity = 15;
-		if(sDeity == "Lolth")              nDeity = 16;
-		if(sDeity == "Seveltarm")          nDeity = 17;
+        if(sDeity == "No Deity")           nDeity = 0;
+        if(sDeity == "Ao")                 nDeity = 1;
+        if(sDeity == "Aerdrie Faenya")     nDeity = 2;
+        if(sDeity == "Angharradh")         nDeity = 3;
+        if(sDeity == "Corellon Larethian") nDeity = 4;		
+        if(sDeity == "Erevan Ilesere")     nDeity = 5;
+        if(sDeity == "Fenmarel Mestarine") nDeity = 6;
+        if(sDeity == "Hanali Celanil")     nDeity = 7;
+        if(sDeity == "Labelas Enoreth")    nDeity = 8;
+        if(sDeity == "Rillfane Rallathil") nDeity = 9;
+        if(sDeity == "Sehanine Moonbow")   nDeity = 10;
+        if(sDeity == "Shevarash")          nDeity = 11;
+        if(sDeity == "Solonor Thelandira") nDeity = 12;
+        if(sDeity == "Eilistraee")         nDeity = 13;
+        if(sDeity == "Ghaunadaur")         nDeity = 14;
+        if(sDeity == "Kiransalee")         nDeity = 15;
+        if(sDeity == "Lolth")              nDeity = 16;
+        if(sDeity == "Seveltarm")          nDeity = 17;
 		if(sDeity == "Vhaeraun")           nDeity = 18;
 		if(sDeity == "Arvoreen")           nDeity = 19;
 		if(sDeity == "Brandobaris")        nDeity = 20;
@@ -682,6 +681,11 @@ void main()
            (nClass4 > 39 && nClass4 < 55) ||
            (nClass4 > 55 && nClass4 < 58) ||
            (nClass4 > 58))                   nClass = nClass4;
+
+        SendMessageToPC(oPC, IntToString(nClass));
+        SendMessageToPC(oPC, IntToString(nClass2));
+        SendMessageToPC(oPC, IntToString(nClass3));
+        SendMessageToPC(oPC, IntToString(nClass4));
         string sClassIcon = Get2DAString("classes", "Icon", nClass)+".tga";
 
         string sWealthIcon = "";
