@@ -520,28 +520,147 @@ void main()
         string sAlignIcon = "acr_";
         int nGoodEvil = GetAlignmentGoodEvil(oRowPC);
         int nLawChaos = GetAlignmentLawChaos(oRowPC);
-        if(nGoodEvil > 69)
+        if(nGoodEvil == ALIGNMENT_GOOD)
         {
-            if(nLawChaos > 69)      sAlignIcon += "lg.tga";
-            else if(nLawChaos > 30) sAlignIcon += "ng.tga";
-            else                    sAlignIcon += "cg.tga";
+            if(nLawChaos == ALIGNMENT_LAWFUL)       sAlignIcon += "lg.tga";
+            else if(nLawChaos == ALIGNMENT_NEUTRAL) sAlignIcon += "ng.tga";
+            else                                    sAlignIcon += "cg.tga";
         }
-        else if(nGoodEvil > 30)
+        else if(nGoodEvil == ALIGNMENT_NEUTRAL)
         {
-            if(nLawChaos > 69)      sAlignIcon += "ln.tga";
-            else if(nLawChaos > 30) sAlignIcon += "tn.tga";
-            else                    sAlignIcon += "cn.tga";
+            if(nLawChaos == ALIGNMENT_LAWFUL)       sAlignIcon += "ln.tga";
+            else if(nLawChaos == ALIGNMENT_NEUTRAL) sAlignIcon += "tn.tga";
+            else                                    sAlignIcon += "cn.tga";
         }
         else
         {
-            if(nLawChaos > 69)      sAlignIcon += "le.tga";
-            else if(nLawChaos > 30) sAlignIcon += "ne.tga";
-            else                    sAlignIcon += "ce.tga";
+            if(nLawChaos == ALIGNMENT_LAWFUL)       sAlignIcon += "le.tga";
+            else if(nLawChaos == ALIGNMENT_NEUTRAL) sAlignIcon += "ne.tga";
+            else                                    sAlignIcon += "ce.tga";
         }
 
         SendMessageToPC(oRowPC, GetDeity(oRowPC));
 		
-		string sDeityIcon = ""; // Get2DAString("nwn2_deities.2da", "IconID", GetDeity(oRowPC))+".tga";
+		string sDeity = "";
+		int nDeity;
+
+		if(sDeity == "No Deity")           nDeity = 0;
+		if(sDeity == "Ao")                 nDeity = 1;
+		if(sDeity == "Aerdrie Faenya")     nDeity = 2;
+		if(sDeity == "Angharradh")         nDeity = 3;
+		if(sDeity == "Corellon Larethian") nDeity = 4;		
+		if(sDeity == "Erevan Ilesere")     nDeity = 5;
+		if(sDeity == "Fenmarel Mestarine") nDeity = 6;
+		if(sDeity == "Hanali Celanil")     nDeity = 7;
+		if(sDeity == "Labelas Enoreth")    nDeity = 8;
+		if(sDeity == "Rillfane Rallathil") nDeity = 9;
+		if(sDeity == "Sehanine Moonbow")   nDeity = 10;
+		if(sDeity == "Shevarash")          nDeity = 11;
+		if(sDeity == "Solonor Thelandira") nDeity = 12;
+		if(sDeity == "Eilistraee")         nDeity = 13;
+		if(sDeity == "Ghaunadaur")         nDeity = 14;
+		if(sDeity == "Kiransalee")         nDeity = 15;
+		if(sDeity == "Lolth")              nDeity = 16;
+		if(sDeity == "Seveltarm")          nDeity = 17;
+		if(sDeity == "Vhaeraun")           nDeity = 18;
+		if(sDeity == "Arvoreen")           nDeity = 19;
+		if(sDeity == "Brandobaris")        nDeity = 20;
+		if(sDeity == "Cyrrollalee")        nDeity = 21;
+		if(sDeity == "Sheela Peryroyl")    nDeity = 22;
+		if(sDeity == "Urogalan")           nDeity = 23;
+		if(sDeity == "Yondalla")           nDeity = 24;
+		if(sDeity == "Abbathor")               nDeity = 25;
+		if(sDeity == "Berronar Truesilver")    nDeity = 26;
+		if(sDeity == "Clangeddin Silverbeard") nDeity = 27;
+		if(sDeity == "Deep Duerra")            nDeity = 28;
+		if(sDeity == "Dugmaren Brightmantle")  nDeity = 29;
+		if(sDeity == "Dumathoin")              nDeity = 30;
+		if(sDeity == "Gorm Gulthyn")           nDeity = 31;
+		if(sDeity == "Haela Brightaxe")        nDeity = 32;
+		if(sDeity == "Laduguer")               nDeity = 33;
+		if(sDeity == "Marthammor Duin")        nDeity = 34;
+		if(sDeity == "Moradin")                nDeity = 35;
+		if(sDeity == "Sharindlar")             nDeity = 36;
+		if(sDeity == "Thard Harr")             nDeity = 37;
+		if(sDeity == "Vergadain")              nDeity = 38;
+		if(sDeity == "Baervan Wildwanderer")   nDeity = 39;
+		if(sDeity == "Baravar Cloakshadow")    nDeity = 40;
+		if(sDeity == "Callarduran Smoothhands") nDeity = 41;
+		if(sDeity == "Flandal Steelskin")       nDeity = 42;
+		if(sDeity == "Gaerdal Ironhand")        nDeity = 43;
+		if(sDeity == "Garl Glittergold")        nDeity = 44;
+		if(sDeity == "Segojan Earthcaller")     nDeity = 45;
+		if(sDeity == "Urdeen")                  nDeity = 46;
+		if(sDeity == "Bahgtru")                 nDeity = 47;
+		if(sDeity == "Gruumsh")                 nDeity = 48;
+		if(sDeity == "Ilneval")                 nDeity = 49;
+		if(sDeity == "Luthic")                  nDeity = 50;
+		if(sDeity == "Shargaas")                nDeity = 51;
+		if(sDeity == "Yurtrus")                 nDeity = 52;
+		if(sDeity == "Akadi")                   nDeity = 53;
+		if(sDeity == "Auril")                   nDeity = 54;
+		if(sDeity == "Azuth")                   nDeity = 55;
+		if(sDeity == "Bane")                    nDeity = 56;
+		if(sDeity == "Beshaba")                 nDeity = 57;
+		if(sDeity == "Chauntea")                nDeity = 58;
+		if(sDeity == "Cyric")                   nDeity = 59;
+		if(sDeity == "Deneir")                  nDeity = 60;
+		if(sDeity == "Eldath")                  nDeity = 61;
+		if(sDeity == "Finder Wyvernspur")       nDeity = 62;
+		if(sDeity == "Garagos")                 nDeity = 63;
+		if(sDeity == "Gargauth")                nDeity = 64;
+		if(sDeity == "Gond")                    nDeity = 65;
+		if(sDeity == "Grumbar")                 nDeity = 66;
+		if(sDeity == "Gwaeron Windstrom")       nDeity = 67;
+		if(sDeity == "Helm")                    nDeity = 68;
+		if(sDeity == "Hoar")                    nDeity = 69;
+		if(sDeity == "Ilmater")                 nDeity = 70;
+		if(sDeity == "Istishia")                nDeity = 71;
+		if(sDeity == "Jergal")                  nDeity = 72;
+		if(sDeity == "Kelemvor")                nDeity = 73;
+		if(sDeity == "Kossuth")                 nDeity = 74;
+		if(sDeity == "Lathander")               nDeity = 75;
+		if(sDeity == "Lliira")                  nDeity = 76;
+		if(sDeity == "Loviatar")                nDeity = 77;
+		if(sDeity == "Lurue")                   nDeity = 78;
+		if(sDeity == "Malar")                   nDeity = 79;
+		if(sDeity == "Mask")                    nDeity = 80;
+		if(sDeity == "Mielikki")                nDeity = 81;
+		if(sDeity == "Milil")                   nDeity = 82;
+		if(sDeity == "Mystra")                  nDeity = 83;
+		if(sDeity == "Oghma")                   nDeity = 84;
+		if(sDeity == "Red Knight")              nDeity = 85;
+		if(sDeity == "Savras")                  nDeity = 86;
+		if(sDeity == "Selune")                  nDeity = 87;
+		if(sDeity == "Shar")                    nDeity = 88;
+		if(sDeity == "Sharess")                 nDeity = 89;
+		if(sDeity == "Shaundakul")              nDeity = 90;
+		if(sDeity == "Shiallia")                nDeity = 91;
+		if(sDeity == "Siamorphe")               nDeity = 92;
+		if(sDeity == "Silvanus")                nDeity = 93;
+		if(sDeity == "Sune")                    nDeity = 94;
+		if(sDeity == "Talona")                  nDeity = 95;
+		if(sDeity == "Talos")                   nDeity = 96;
+		if(sDeity == "Tempus")                  nDeity = 97;
+		if(sDeity == "Torm")                    nDeity = 98;
+		if(sDeity == "Tymora")                  nDeity = 99;
+		if(sDeity == "Tyr")                     nDeity = 100;
+		if(sDeity == "Umberlee")                nDeity = 101;
+		if(sDeity == "Valkur")                  nDeity = 102;
+		if(sDeity == "Velsharoon")              nDeity = 103;
+		if(sDeity == "Waukeen")                 nDeity = 104;
+		if(sDeity == "None")                    nDeity = 105;
+		if(sDeity == "Sseht")                   nDeity = 106;
+		if(sDeity == "Leira")                   nDeity = 107;
+		if(sDeity == "Ubtao")                   nDeity = 108;
+		if(sDeity == "Horus-Re")                nDeity = 148;
+        if(sDeity == "Amaunator")               nDeity = 149;
+		if(sDeity == "Deep Sashelas")           nDeity = 150;
+		if(sDeity == "Tiamat")                  nDeity = 151;		
+        if(sDeity == "Uthgar")                  nDeity = 152;
+		if(sDeity == "Bahamut")                 nDeity = 153;
+				
+		string sDeityIcon = Get2DAString("nwn2_deities.2da", "IconID", nDeity)+".tga";
 
 
         int nClass  = GetClassByPosition(1, oRowPC);
@@ -563,10 +682,10 @@ void main()
            (nClass4 > 39 && nClass4 < 55) ||
            (nClass4 > 55 && nClass4 < 58) ||
            (nClass4 > 58))                   nClass = nClass4;
-        string sClassIcon = Get2DAString("classes.2da", "IconID", nClass)+".tga";
+        string sClassIcon = Get2DAString("classes.2da", "Icon", nClass)+".tga";
 
         string sWealthIcon = "";
-		int nWealth = 0;
+		int nWealth = GetGold(oRowPC);
 		int nCount = 0;
 		object oItem = GetItemInSlot(nCount, oRowPC);
 		while(nCount < 14)
