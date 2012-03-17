@@ -669,23 +669,22 @@ void main()
         if(GetLevelByClass(nClass2, oRowPC) > GetLevelByClass(nClass, oRowPC)) nClass = nClass2;
         if(GetLevelByClass(nClass3, oRowPC) > GetLevelByClass(nClass, oRowPC)) nClass = nClass3;
         if(GetLevelByClass(nClass4, oRowPC) > GetLevelByClass(nClass, oRowPC)) nClass = nClass4;
-        if((nClass2 > 26 && nClass2 < 38) ||
-           (nClass2 > 39 && nClass2 < 55) ||
-           (nClass2 > 55 && nClass2 < 58) ||
-           (nClass2 > 58))                   nClass = nClass2;
-        if((nClass3 > 26 && nClass3 < 38) ||
-           (nClass3 > 39 && nClass3 < 55) ||
-           (nClass3 > 55 && nClass3 < 58) ||
-           (nClass3 > 58))                   nClass = nClass3;
-        if((nClass4 > 26 && nClass4 < 38) ||
-           (nClass4 > 39 && nClass4 < 55) ||
-           (nClass4 > 55 && nClass4 < 58) ||
-           (nClass4 > 58))                   nClass = nClass4;
+        if(((nClass2 > 26 && nClass2 < 38) ||
+            (nClass2 > 39 && nClass2 < 55) ||
+            (nClass2 > 55 && nClass2 < 58) ||
+            (nClass2 > 58)) && 
+		   nClass2 != CLASS_TYPE_INVALID)    nClass = nClass2;
+        if(((nClass3 > 26 && nClass3 < 38) ||
+            (nClass3 > 39 && nClass3 < 55) ||
+            (nClass3 > 55 && nClass3 < 58) ||
+            (nClass3 > 58)) && 
+		   nClass2 != CLASS_TYPE_INVALID)    nClass = nClass3;
+        if(((nClass4 > 26 && nClass4 < 38) ||
+            (nClass4 > 39 && nClass4 < 55) ||
+            (nClass4 > 55 && nClass4 < 58) ||
+            (nClass4 > 58)) && 
+		   nClass2 != CLASS_TYPE_INVALID)    nClass = nClass4;
 
-        SendMessageToPC(oPC, IntToString(nClass));
-        SendMessageToPC(oPC, IntToString(nClass2));
-        SendMessageToPC(oPC, IntToString(nClass3));
-        SendMessageToPC(oPC, IntToString(nClass4));
         string sClassIcon = Get2DAString("classes", "Icon", nClass)+".tga";
 
         string sWealthIcon = "";
