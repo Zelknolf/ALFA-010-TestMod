@@ -660,7 +660,7 @@ void main()
         if(sDeity == "Uthgar")                  nDeity = 152;
 		if(sDeity == "Bahamut")                 nDeity = 153;
 				
-		string sDeityIcon = Get2DAString("nwn2_deities.2da", "IconID", nDeity)+".tga";
+		string sDeityIcon = Get2DAString("nwn2_deities", "IconID", nDeity)+".tga";
 
 
         int nClass  = GetClassByPosition(1, oRowPC);
@@ -682,7 +682,7 @@ void main()
            (nClass4 > 39 && nClass4 < 55) ||
            (nClass4 > 55 && nClass4 < 58) ||
            (nClass4 > 58))                   nClass = nClass4;
-        string sClassIcon = Get2DAString("classes.2da", "Icon", nClass)+".tga";
+        string sClassIcon = Get2DAString("classes", "Icon", nClass)+".tga";
 
         string sWealthIcon = "";
 		int nWealth = GetGold(oRowPC);
@@ -709,6 +709,9 @@ void main()
 		else if(nWealth < nHighWealth) sWealthIcon = "wealth_avg.tga";
 		else if(nWealth < nCutOff)     sWealthIcon = "wealth_high.tga";
 		else                           sWealthIcon = "wealth_over.tga";
+
+        SendMessageToPC(oPC, sClassIcon);
+        SendMessageToPC(oPC, sDeityIcon);
 
 		AddListBoxRow(oPC, "SCREEN_PLAYERREPORT", "playerreport", sName, "LISTBOX_ITEM_TEXT=  "+sName,   "LISTBOX_ALIGN_ICON="+sAlignIcon+";LISTBOX_DEITY_ICON="+sDeityIcon+";LISTBOX_CLASS_ICON="+sClassIcon+";LISTBOX_WEALTH_ICON="+sWealthIcon+";LISTBOX_STYLE_ICON=acr_spade.tga", "5="+IntToString(ObjectToInt(oRowPC)), "unhide");
         oRowPC = GetNextPC();
