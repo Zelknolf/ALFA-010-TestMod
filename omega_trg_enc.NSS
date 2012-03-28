@@ -25,7 +25,7 @@
 #include "acr_spawn_i"
 #include "acr_language_i"
 
-void TSM_SendText(object oPC, string sText, int bFloat=FALSE, int nColor=COLOR_CYAN, int bFaction=FALSE);
+void TSM_SendText(object oPC, string sText, int bFloat=FALSE, int nColor=-1, int bFaction=FALSE);
 
 void TSM_SendText(object oPC, string sText, int bFloat=FALSE, int nColor=-1, int bFaction=FALSE)
 {   //Purpose: Send text to a pc or faction in color quickly

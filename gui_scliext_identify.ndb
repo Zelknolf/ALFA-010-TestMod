@@ -1,28 +1,64 @@
 NDB V1.0
-0000001 0000001 0000011 0000004 0000004
-N00 gui_scliext_identify
+0000002 0000001 0000024 0000009 0000010
+n00 acr_scliext_i
+N01 gui_scliext_identify
 s 03 vector
 sf f x
 sf f y
 sf f z
-f ffffffff ffffffff 000 i FEATURE_PER_AREA_MAP_CONTROLS
-f ffffffff ffffffff 000 i FEATURE_NO_MAP_ENVIRON
-f ffffffff ffffffff 000 i FEATURE_NO_MAP_DOORS
-f ffffffff ffffffff 000 i FEATURE_NO_MAP_TRAPS
-f ffffffff ffffffff 000 i FEATURE_NO_MAP_CREATURES
-f ffffffff ffffffff 000 i FEATURE_NO_MAP_PATHING
-f ffffffff ffffffff 000 i FEATURE_NO_MAP_PINS
-f ffffffff ffffffff 000 i FEATURE_NO_MAP_BACKGROUND
-f ffffffff ffffffff 000 i FEATURE_DM_AREA_POLLING
-f 00000015 00000083 002 v main
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_PER_AREA_MAP_CONTROLS
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_ENVIRON
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_DOORS
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_TRAPS
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_CREATURES
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_PATHING
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_PINS
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_BACKGROUND
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_DM_AREA_POLLING
+f ffffffff ffffffff 000 s ACR_SCLIEXT_VERSION
+f ffffffff ffffffff 000 s ACR_SCLIEXT_FEATURES
+f ffffffff ffffffff 000 i ACR_SCLIEXT_DEFAULT_FEATURE_BITS
+f ffffffff ffffffff 000 s ACR_SCLIEXT_URL
+f ffffffff ffffffff 000 s ACR_SCLIEXT_URL_AND_FORUM_INFO
+f ffffffff ffffffff 000 s ACR_SCLIEXT_DISABLE_EXISTANCE_CHECK
+f 0000026d 000002c7 004 i ACR_MakeClientExtensionVersion
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 001 i ACR_GetPlayerClientExtensionVersion
+fp o
+f ffffffff ffffffff 001 i ACR_GetPlayerClientExtensionFeatures
+fp o
+f ffffffff ffffffff 001 v ACR_SCliExtOnPCLoaded
+fp o
+f ffffffff ffffffff 001 v ACR_SCliExtOnClientLeave
+fp o
+f ffffffff ffffffff 001 v ACR_CheckForClientExtensionInstalled
+fp o
+f ffffffff ffffffff 002 v ACR_OpenChatInputBox
+fp o
+fp s
+f 00000015 0000026d 002 v main
 fp i
 fp i
 f 0000000d 00000015 000 v #loader
-v 00000015 0000007b 00000000 i nClientExtensionVersion
-v 00000015 0000007b 00000004 i nFlagsAndProtocolVersion
-v 00000017 00000075 00000008 o oCallerPC
-v 0000002d 00000075 0000000c i nSupportedFeatures
-l00 0000020 00000015 0000002b
-l00 0000021 0000002b 00000041
-l00 0000027 00000041 00000075
-l00 0000034 0000007b 00000083
+v 00000015 00000265 00000000 i nClientExtensionVersion
+v 00000015 00000265 00000004 i nFlagsAndProtocolVersion
+v 00000017 0000025f 00000008 o oCallerPC
+v 0000002d 0000025f 0000000c i nSupportedFeatures
+v 0000026d 000002c5 00000000 i #retval
+v 0000026d 000002bf 00000004 i V3
+v 0000026d 000002bf 00000008 i V2
+v 0000026d 000002bf 0000000c i V1
+v 0000026d 000002bf 00000010 i V0
+l01 0000012 00000015 0000002b
+l01 0000013 0000002b 00000041
+l01 0000017 00000041 0000006b
+l01 0000018 0000006b 00000096
+l01 0000020 00000096 000000c0
+l01 0000022 000000c6 0000022b
+l01 0000030 0000022b 0000025f
+l01 0000037 00000265 0000026d
+l00 0000125 0000026d 000002bf
+l00 0000126 000002bf 000002c7

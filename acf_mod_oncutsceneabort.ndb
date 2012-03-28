@@ -1,81 +1,96 @@
 NDB V1.0
-0000072 0000008 0004356 0000019 0000072
-n00 acr_debug_i
-n01 dmfi_inc_conv
-n02 acr_it_persist_i
-n03 ginc_debug
-n04 x0_i0_campaign
-n05 x0_i0_enemy
-n06 x0_inc_generic
-n07 nwn2_inc_talent
-n08 nw_i0_generic
-n09 acr_settings_i
-n10 acr_array_i
-n11 nwnx_include
-n12 acr_queue_i
-n13 acr_db_persist_i
-n14 acr_i
-n15 acr_tools_i
-n16 acr_time_i
-n17 acr_1984_i
-n18 acr_xp_i
-n19 x2_inc_switches
-n20 acr_spelltrack_i
-n21 acr_portal_i
-n22 dmfi_inc_sendtex
-n23 dmfi_inc_tool
-n24 dmfi_inc_inc_com
-n25 acr_pps_i
-n26 acr_nonlethal_i
-n27 x0_i0_match
-n28 x2_inc_itemprop
-n29 x0_i0_petrify
-n30 x0_i0_assoc
-n31 nw_i0_spells
-n32 x0_i0_partywide
-n33 x0_i0_transport
-n34 x0_i0_common
-n35 nw_i0_plot
-n36 x0_i0_behavior
-n37 x0_i0_position
-n38 x0_i0_modes
-n39 x0_i0_voice
-n40 x0_i0_debug
-n41 x0_i0_equip
-n42 ginc_2da
-n43 ginc_event_handlers
-n44 x0_i0_talent
-n45 x0_i0_combat
-n46 x0_i0_spawncond
-n47 x0_i0_walkway
-n48 x0_i0_anims
-n49 x0_i0_henchman
-n50 nwn2_inc_metmag
-n51 x0_i0_spells
-n52 nwn2_inc_spells
-n53 acr_effects_i
-n54 acr_skills_i
-n55 acr_resting_i
-n56 acr_mobloot_i
-n57 acr_death_i
-n58 acr_spawn_i
-n59 acr_scry_i
-n60 acr_quest_i
-n61 acr_chat_i
-n62 acr_items_i
-n63 acr_language_i
-n64 acr_feat_i
-n65 acr_prc_bladesinger_i
-n66 acr_feat_events_i
-n67 dmfi_inc_langexe
-n68 dmfi_inc_initial
-n69 dmfi_inc_lang
-n70 acr_mod_events_i
-N71 acf_mod_oncutsceneabort
+0000080 0000009 0004618 0000021 0000080
+n00 ginc_debug
+n01 acr_debug_i
+n02 acr_server_ipc_i
+n03 dmfi_inc_conv
+n04 acr_it_persist_i
+n05 x0_i0_campaign
+n06 x0_i0_enemy
+n07 x0_inc_generic
+n08 nwn2_inc_talent
+n09 nw_i0_generic
+n10 acr_death_i
+n11 acr_settings_i
+n12 acr_array_i
+n13 nwnx_include
+n14 acr_queue_i
+n15 acr_db_persist_i
+n16 acr_i
+n17 x0_i0_position
+n18 ginc_math
+n19 acr_tools_i
+n20 acr_time_i
+n21 acr_1984_i
+n22 acr_xp_i
+n23 x2_inc_switches
+n24 acr_spelltrack_i
+n25 acr_portal_i
+n26 dmfi_inc_sendtex
+n27 dmfi_inc_tool
+n28 dmfi_inc_inc_com
+n29 acr_pps_i
+n30 acr_nonlethal_i
+n31 x0_i0_match
+n32 x2_inc_itemprop
+n33 x0_i0_petrify
+n34 x0_i0_assoc
+n35 nw_i0_spells
+n36 x0_i0_partywide
+n37 x0_i0_transport
+n38 x0_i0_common
+n39 nw_i0_plot
+n40 x0_i0_behavior
+n41 x0_i0_modes
+n42 x0_i0_voice
+n43 x0_i0_debug
+n44 x0_i0_equip
+n45 ginc_2da
+n46 ginc_event_handlers
+n47 x0_i0_talent
+n48 x0_i0_combat
+n49 x0_i0_spawncond
+n50 x0_i0_walkway
+n51 x0_i0_anims
+n52 x0_i0_henchman
+n53 nwn2_inc_metmag
+n54 x0_i0_spells
+n55 nwn2_inc_spells
+n56 acr_effects_i
+n57 acr_skills_i
+n58 acr_resting_i
+n59 acr_mobloot_i
+n60 acr_spawn_i
+n61 acr_scry_i
+n62 acr_quest_i
+n63 acr_chat_i
+n64 acr_items_i
+n65 acr_language_i
+n66 acr_feat_i
+n67 acr_prc_bladesinger_i
+n68 acr_feat_events_i
+n69 acr_server_misc_i
+n70 acr_srvadmin_i
+n71 acr_version_i
+n72 acr_scliext_i
+n73 acr_area_instance_i
+n74 dmfi_inc_langexe
+n75 dmfi_inc_initial
+n76 dmfi_inc_lang
+n77 acr_roll_i
+n78 acr_mod_events_i
+N79 acf_mod_oncutsceneabort
 s 03 vector
 sf f x
 sf f y
 sf f z
+s 06 ACR_SERVER_IPC_EVENT
+sf i SourcePlayerID
+sf i SourceServerID
+sf i DestinationPlayerID
+sf i DestinationServerID
+sf i EventType
+sf s EventText
 s 04 strStorageTransactionInfo
 sf i nNetGoldToPC
 sf s sPCName
@@ -120,6 +135,7 @@ f ffffffff ffffffff 000 s _ACR_SETTINGS_SERVER_NAME
 f ffffffff ffffffff 000 s _ACR_SETTINGS_SERVER_REGION
 f ffffffff ffffffff 000 s _ACR_SETTINGS_SERVER_IP
 f ffffffff ffffffff 000 i ACR_GetServerId
+f ffffffff ffffffff 000 i ACR_GetServerID
 f ffffffff ffffffff 000 s ACR_GetServerName
 f ffffffff ffffffff 000 i ACR_GetServerRegion
 f ffffffff ffffffff 000 s ACR_GetServerIp
@@ -249,6 +265,11 @@ fp s
 f ffffffff ffffffff 000 i SQL_ERROR
 f ffffffff ffffffff 000 i SQL_SUCCESS
 f ffffffff ffffffff 000 s ACR_CID
+f ffffffff ffffffff 000 s ACR_PID
+f ffffffff ffffffff 000 s ACR_SRVADMIN
+f ffffffff ffffffff 000 i ACR_SRVADMIN_INDETERMINITE
+f ffffffff ffffffff 000 i ACR_SRVADMIN_IS_ADMIN
+f ffffffff ffffffff 000 i ACR_SRVADMIN_NOT_ADMIN
 f ffffffff ffffffff 000 i ACR_CHARACTER_ID_NONE
 f ffffffff ffffffff 000 s ACR_PLAYERSTATUS_CACHE_VAR
 f ffffffff ffffffff 000 s ACR_CDKEY
@@ -267,6 +288,9 @@ f ffffffff ffffffff 000 i _ACR_SQL_DBCTRL_ASYNC_PENDING
 f ffffffff ffffffff 000 i _ACR_SQL_QUERY_MAX_LEN
 f ffffffff ffffffff 000 s ACR_DTH_CORPSE_RESREF
 f ffffffff ffffffff 000 s ACR_DTH_BODY_RESREF
+f ffffffff ffffffff 000 i ACR_PC_LOCAL_FLAG_PORTAL_IN_PROGRESS
+f ffffffff ffffffff 000 i ACR_PC_LOCAL_FLAG_PORTAL_COMMITTED
+f ffffffff ffffffff 000 i ACR_PC_LOCAL_FLAG_SERVER_TELL_HELP
 f ffffffff ffffffff 000 v ACR_StartAsyncService
 f ffffffff ffffffff 001 v ACR_AsyncSQLQuery
 fp s
@@ -281,6 +305,11 @@ f ffffffff ffffffff 001 s ACR_SQLGetData
 fp i
 f ffffffff ffffffff 000 i ACR_SQLGetAffectedRows
 f ffffffff ffffffff 004 v ACR_SetPersistentString
+fp o
+fp s
+fp s
+fp i
+f ffffffff ffffffff 004 v ACR_SetPersistentStringNoTimestamp
 fp o
 fp s
 fp s
@@ -347,11 +376,21 @@ f ffffffff ffffffff 001 v ACR_SetPCPublicCDKey
 fp o
 f ffffffff ffffffff 001 s ACR_GetPCPublicCDKey
 fp o
-f ffffffff ffffffff 002 v ACR_SetCharacterID
+f ffffffff ffffffff 003 v ACR_SetCharacterID
 fp o
+fp i
 fp i
 f ffffffff ffffffff 001 i ACR_GetCharacterID
 fp o
+f ffffffff ffffffff 001 i ACR_GetPlayerID
+fp o
+f ffffffff ffffffff 001 i ACR_IsServerAdmin
+fp o
+f ffffffff ffffffff 001 i ACR_GetPCLocalFlags
+fp o
+f ffffffff ffffffff 002 v ACR_SetPCLocalFlags
+fp o
+fp i
 f ffffffff ffffffff 000 v ACR_CreateSQLTables
 f ffffffff ffffffff 000 v ACR_ResetDatabase
 f ffffffff ffffffff 000 v ACR_AdjustTables
@@ -364,6 +403,14 @@ f ffffffff ffffffff 000 i ACR_GetModuleStartTime
 f ffffffff ffffffff 001 v ACR_FlushQueryQueue
 fp o
 f ffffffff ffffffff 000 s ACR_GetServerAddressFromDatabase
+f ffffffff ffffffff 003 i ACR_LoadObjectVariablesFromPersistStore
+fp o
+fp o
+fp s
+f ffffffff ffffffff 003 v ACR_SaveObjectVariablesToPersistStore
+fp o
+fp o
+fp s
 f ffffffff ffffffff 000 v _ResetServer
 f ffffffff ffffffff 000 v _ServiceAsyncQueries
 f ffffffff ffffffff 004 i _ServiceAsyncQueriesForQueue
@@ -396,10 +443,30 @@ fp s
 f ffffffff ffffffff 001 i _SQLQueryReturnsValues
 fp s
 f ffffffff ffffffff 000 s ACR_NWN_GOLD_TAG
+f ffffffff ffffffff 000 i BASE_ITEM_TRADE_GOODS
+f ffffffff ffffffff 000 i BASE_ITEM_SHORT_MAGICSTAFF
+f ffffffff ffffffff 000 i BASE_ITEM_SMALL_SPEAR
 f ffffffff ffffffff 000 i CLASS_BLADESINGER
 f ffffffff ffffffff 000 i CLASS_LOREMASTER
 f ffffffff ffffffff 000 i CLASS_MYSTICTHEURGE
 f ffffffff ffffffff 000 i RACIAL_TYPE_PLANT
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_DWARF_GOLD
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_DWARF_GRAY
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_ELF_DROW
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_ELF_SUN
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_ELF_WOOD
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_ELF_WILD
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_GNOME_DEEP
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_HALF_DROW
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_HALFLING_STRONG
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_ORC_GRAY
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_YUANTI
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_AASIMAR
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_TIEFLING
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_GENASI_AIR
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_GENASI_EARTH
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_GENASI_FIRE
+f ffffffff ffffffff 000 i APPEARANCE_TYPE_GENASI_WATER
 f ffffffff ffffffff 000 i SPELL_RECALL_SPIRIT
 f ffffffff ffffffff 000 i SPELL_LOREMASTER_GREATERLORE
 f ffffffff ffffffff 000 i SPELL_LOREMASTER_TRUELORE
@@ -412,6 +479,7 @@ f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_6
 f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_7
 f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_8
 f ffffffff ffffffff 000 i SPELL_ELDRITCH_BLAST_9
+f ffffffff ffffffff 000 i SPELL_CRAFT
 f ffffffff ffffffff 000 i SKILL_BALANCE
 f ffffffff ffffffff 000 i SKILL_CLIMB
 f ffffffff ffffffff 000 i SKILL_CRAFT__ALCHEMY
@@ -521,6 +589,11 @@ f ffffffff ffffffff 000 i FEAT_REGION_WATERDEEP
 f ffffffff ffffffff 000 i FEAT_REGION_WESTERN_HEARTLANDS
 f ffffffff ffffffff 000 i FEAT_REGION_WIZARDS_REACH
 f ffffffff ffffffff 000 i FEAT_REGION_OTHER
+f ffffffff ffffffff 000 i FEAT_CRAFT
+f ffffffff ffffffff 000 i FEAT_CRAFT_CONSTRUCT
+f ffffffff ffffffff 000 i FEAT_FORGE_RING
+f ffffffff ffffffff 000 i FEAT_CRAFT_ROD
+f ffffffff ffffffff 000 i FEAT_CRAFT_STAFF
 f ffffffff ffffffff 000 i FEAT_BLADESINGER_SPELLCASTING_BARD
 f ffffffff ffffffff 000 i FEAT_BLADESINGER_SPELLCASTING_SORCERER
 f ffffffff ffffffff 000 i FEAT_BLADESINGER_SPELLCASTING_WIZARD
@@ -588,6 +661,269 @@ f ffffffff ffffffff 001 i ACR_GetIsCorpseMutilated
 fp o
 f ffffffff ffffffff 001 i ACR_GetIsCorpseDecayed
 fp o
+f ffffffff ffffffff 000 i POST_COLOR_RED
+f ffffffff ffffffff 000 i POST_COLOR_GREEN
+f ffffffff ffffffff 000 i POST_COLOR_BLUE
+f ffffffff ffffffff 000 i POST_COLOR_WHITE
+f ffffffff ffffffff 000 i POST_COLOR_BLACK
+f ffffffff ffffffff 000 i POST_COLOR_OFFSET
+f ffffffff ffffffff 000 i POST_COLOR_DEBUG
+f ffffffff ffffffff 000 i POST_COLOR_ERROR
+f ffffffff ffffffff 000 i LINE_SIZE
+f ffffffff ffffffff 000 i PRETTY_LINE_WRAP
+f ffffffff ffffffff 000 i PRETTY_X_OFFSET
+f ffffffff ffffffff 000 i PRETTY_Y_OFFSET
+f ffffffff ffffffff 000 f PRETTY_DURATION
+f ffffffff ffffffff 000 f DURATION_NORMAL
+f ffffffff ffffffff 000 f DURATION_LONG
+f ffffffff ffffffff 001 o GetFirstPCInFaction
+fp o
+f ffffffff ffffffff 006 v Message
+fp s
+fp i
+fp i
+fp f
+fp i
+fp i
+f ffffffff ffffffff 005 v ErrorMessage
+fp s
+fp i
+fp i
+fp f
+fp i
+f ffffffff ffffffff 005 v DebugMessage
+fp s
+fp i
+fp i
+fp f
+fp i
+f ffffffff ffffffff 002 v OldFunctionMessage
+fp s
+fp s
+f ffffffff ffffffff 005 v MessageLine
+fp i
+fp s
+fp i
+fp f
+fp i
+f ffffffff ffffffff 005 v DebugMessageLine
+fp i
+fp s
+fp i
+fp f
+fp i
+f ffffffff ffffffff 004 v PrettyPostString
+fp o
+fp s
+fp f
+fp i
+f ffffffff ffffffff 003 v PrettyDebug
+fp s
+fp f
+fp i
+f ffffffff ffffffff 003 v PrettyError
+fp s
+fp f
+fp i
+f ffffffff ffffffff 003 v PrettyMessage
+fp s
+fp f
+fp i
+f ffffffff ffffffff 006 v Backdrop
+fp o
+fp s
+fp i
+fp i
+fp f
+fp i
+f ffffffff ffffffff 001 v SendMessageToAllPlayersByStrRef
+fp i
+f ffffffff ffffffff 002 v SendMessageToPartyByStrRef
+fp o
+fp i
+f ffffffff ffffffff 000 f DISTANCE_TINY
+f ffffffff ffffffff 000 f DISTANCE_SHORT
+f ffffffff ffffffff 000 f DISTANCE_MEDIUM
+f ffffffff ffffffff 000 f DISTANCE_LARGE
+f ffffffff ffffffff 000 f DISTANCE_HUGE
+f ffffffff ffffffff 001 s LocationToString
+fp e2
+f ffffffff ffffffff 001 s VectorToString
+fp t0000
+f ffffffff ffffffff 002 v MoveToNewLocation
+fp e2
+fp o
+f ffffffff ffffffff 002 f GetChangeInX
+fp f
+fp f
+f ffffffff ffffffff 002 f GetChangeInY
+fp f
+fp f
+f ffffffff ffffffff 003 t0000 GetChangedPosition
+fp t0000
+fp f
+fp f
+f ffffffff ffffffff 002 f GetAngleBetweenLocations
+fp e2
+fp e2
+f ffffffff ffffffff 001 f GetOppositeDirection
+fp f
+f ffffffff ffffffff 001 f GetRightDirection
+fp f
+f ffffffff ffffffff 001 f GetHalfRightDirection
+fp f
+f ffffffff ffffffff 001 f GetFarRightDirection
+fp f
+f ffffffff ffffffff 002 f GetCustomRightDirection
+fp f
+fp f
+f ffffffff ffffffff 001 f GetLeftDirection
+fp f
+f ffffffff ffffffff 001 f GetHalfLeftDirection
+fp f
+f ffffffff ffffffff 001 f GetFarLeftDirection
+fp f
+f ffffffff ffffffff 002 f GetCustomLeftDirection
+fp f
+fp f
+f ffffffff ffffffff 002 v TurnToFaceObject
+fp o
+fp o
+f ffffffff ffffffff 002 e2 GetFlankingRightLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetFlankingLeftLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetOppositeLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetAheadLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetBehindLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetForwardFlankingRightLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetForwardFlankingLeftLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetAheadRightLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetAheadLeftLocation
+fp o
+fp f
+f ffffffff ffffffff 001 e2 GetStepLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetStepRightLocation
+fp o
+f ffffffff ffffffff 003 e2 GetRandomLocation
+fp o
+fp o
+fp f
+f ffffffff ffffffff 003 f GetAngle
+fp t0000
+fp t0000
+fp f
+f ffffffff ffffffff 002 f GetAngleBetweenObjects
+fp o
+fp o
+f ffffffff ffffffff 003 i IsDirectionWithinTolerance
+fp f
+fp f
+fp f
+f ffffffff ffffffff 002 i IsFacingWithin
+fp f
+fp o
+f ffffffff ffffffff 003 i IsPlaceableInView
+fp o
+fp f
+fp f
+f ffffffff ffffffff 002 i IsCreatureInView
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetLeftLocation
+fp o
+fp f
+f ffffffff ffffffff 002 e2 GetRightLocation
+fp o
+fp f
+f ffffffff ffffffff 001 v SpeakLocation
+fp e2
+f ffffffff ffffffff 001 v PrintLocation
+fp e2
+f ffffffff ffffffff 001 f GetNormalizedDirection
+fp f
+f ffffffff ffffffff 004 e2 GenerateNewLocation
+fp o
+fp f
+fp f
+fp f
+f ffffffff ffffffff 004 e2 GenerateNewLocationFromLocation
+fp e2
+fp f
+fp f
+fp f
+f ffffffff ffffffff 001 e2 GetCenterPointOfArea
+fp o
+f ffffffff ffffffff 000 f EPSILON
+f ffffffff ffffffff 001 f RandomDelta
+fp f
+f ffffffff ffffffff 001 f RandomFloat
+fp f
+f ffffffff ffffffff 002 f RandomFloatBetween
+fp f
+fp f
+f ffffffff ffffffff 002 i RandomIntBetween
+fp i
+fp i
+f ffffffff ffffffff 002 t0000 GetRandom2DVector
+fp f
+fp f
+f ffffffff ffffffff 004 e2 GetNearbyLocation
+fp e2
+fp f
+fp f
+fp f
+f ffffffff ffffffff 003 i IsIntInRange
+fp i
+fp i
+fp i
+f ffffffff ffffffff 002 i ScaleInt
+fp i
+fp f
+f ffffffff ffffffff 002 i IsFloatNearInt
+fp f
+fp i
+f ffffffff ffffffff 004 v SetLocalIntState
+fp o
+fp s
+fp i
+fp i
+f ffffffff ffffffff 003 i GetLocalIntState
+fp o
+fp s
+fp i
+f ffffffff ffffffff 003 i SetState
+fp i
+fp i
+fp i
+f ffffffff ffffffff 002 i GetState
+fp i
+fp i
+f ffffffff ffffffff 001 i GetHexStringDigitValue
+fp s
+f ffffffff ffffffff 001 i HexStringToInt
+fp s
+f ffffffff ffffffff 002 i CompareVectors
+fp t0000
+fp t0000
+f ffffffff ffffffff 002 i CompareVectors2D
+fp t0000
+fp t0000
 f ffffffff ffffffff 000 i BIT_0
 f ffffffff ffffffff 000 i BIT_1
 f ffffffff ffffffff 000 i BIT_2
@@ -634,6 +970,9 @@ f ffffffff ffffffff 000 i ARMOR_TYPE_CLOTHING
 f ffffffff ffffffff 000 i ARMOR_TYPE_LIGHT
 f ffffffff ffffffff 000 i ARMOR_TYPE_MEDIUM
 f ffffffff ffffffff 000 i ARMOR_TYPE_HEAVY
+f ffffffff ffffffff 000 f MATH_CONSTANT_E
+f ffffffff ffffffff 000 f ACR_LOCATION_SEARCH_RADIUS
+f ffffffff ffffffff 000 f ACR_AREA_TRANSITION_ZDIFF_MAX
 f ffffffff ffffffff 002 i RemoveAllEffectsFrom
 fp o
 fp o
@@ -679,6 +1018,8 @@ fp o
 fp s
 fp i
 fp i
+f ffffffff ffffffff 001 f exp
+fp f
 f ffffffff ffffffff 002 f ACR_RandomFloat
 fp f
 fp f
@@ -768,9 +1109,88 @@ fp i
 fp i
 fp i
 fp i
+f ffffffff ffffffff 003 e2 ACR_CalcSafeLocation
+fp o
+fp e2
+fp o
+f ffffffff ffffffff 001 s GetFeatName
+fp i
+f ffffffff ffffffff 002 e4 GetFirstItemPropertyOfType
+fp o
+fp i
+f ffffffff ffffffff 001 i XPGainedSinceLevel
+fp o
+f ffffffff ffffffff 001 v RemoveSpellUses
+fp o
+f ffffffff ffffffff 002 i GetIsValidVariableIndex
+fp o
+fp i
+f ffffffff ffffffff 002 s SafeGetVariableName
+fp o
+fp i
+f ffffffff ffffffff 002 i SafeGetVariableType
+fp o
+fp i
+f ffffffff ffffffff 002 f SafeGetVariableValueFloat
+fp o
+fp i
+f ffffffff ffffffff 002 i SafeGetVariableValueInt
+fp o
+fp i
+f ffffffff ffffffff 002 e2 SafeGetVariableValueLocation
+fp o
+fp i
+f ffffffff ffffffff 002 o SafeGetVariableValueObject
+fp o
+fp i
+f ffffffff ffffffff 002 s SafeGetVariableValueString
+fp o
+fp i
+f ffffffff ffffffff 002 i GetNextEntryInStringList
+fp s
+fp i
+f ffffffff ffffffff 002 i GetPreviousEntryInStringList
+fp s
+fp i
+f ffffffff ffffffff 001 i GetFirstEntryInStringList
+fp s
+f ffffffff ffffffff 001 i GetLastEntryInStringList
+fp s
+f ffffffff ffffffff 002 i IsElementInStringList
+fp s
+fp i
+f ffffffff ffffffff 002 f atan2
+fp f
+fp f
+f ffffffff ffffffff 002 f ACR_RandomLogNormal
+fp f
+fp f
 f ffffffff ffffffff 002 i DeleteAllLocalIntsWithString
 fp o
 fp s
+f ffffffff ffffffff 001 i DataStringToInt
+fp s
+f ffffffff ffffffff 001 f HexStringToFloat
+fp s
+f ffffffff ffffffff 001 i GetSubraceAppearance
+fp i
+f ffffffff ffffffff 002 o _ParseInterval
+fp s
+fp i
+f ffffffff ffffffff 001 v _CleanupInterval
+fp i
+f ffffffff ffffffff 002 s IntervalToList
+fp s
+fp i
+f ffffffff ffffffff 002 i UniformRandomOverInterval
+fp s
+fp i
+f ffffffff ffffffff 005 e2 _RotateVectorAndCompare
+fp e2
+fp e2
+fp f
+fp f
+fp o
 f ffffffff ffffffff 000 i DEBUG_TARGET_NONE
 f ffffffff ffffffff 000 i DEBUG_TARGET_DMS
 f ffffffff ffffffff 000 i DEBUG_TARGET_PCS
@@ -910,6 +1330,8 @@ f ffffffff ffffffff 000 s ACR_LOG_SUBDUAL
 f ffffffff ffffffff 000 s ACR_LOG_OVERCR
 f ffffffff ffffffff 000 s ACR_LOG_SERVER_LOAD
 f ffffffff ffffffff 000 s ACR_LOG_VALIDATED
+f ffffffff ffffffff 000 s ACR_LOG_SERVER_ADMIN_COMMAND
+f ffffffff ffffffff 000 s ACR_LOG_DEATH_FLOOR
 f ffffffff ffffffff 004 v ACR_LogEvent
 fp o
 fp s
@@ -957,6 +1379,9 @@ fp o
 f ffffffff ffffffff 001 i ACR_GetHasIllegalProperties
 fp o
 f ffffffff ffffffff 000 v ACR_LogModuleLoaded
+f ffffffff ffffffff 002 v ACR_LogServerAdminCommand
+fp o
+fp s
 f ffffffff ffffffff 000 s _STORED_XP
 f ffffffff ffffffff 000 f _RPXP_SCRIPT_ANCHOR
 f ffffffff ffffffff 000 s _BANKED_RPXP_INCREMENTS
@@ -974,6 +1399,7 @@ f ffffffff ffffffff 000 f _ACR_XP_MAX_CHALLENGE_HOUR
 f ffffffff ffffffff 000 f _ACR_XP_COMBAT_RANGE
 f ffffffff ffffffff 000 f _ACR_XP_OVERCR_LOGGING
 f ffffffff ffffffff 000 f _ACR_XP_PARTYSCALE
+f ffffffff ffffffff 000 s _ACR_PPS_QUARANTINED
 f ffffffff ffffffff 003 v ACR_AwardStaticQuestXP
 fp o
 fp s
@@ -1006,6 +1432,8 @@ fp o
 f ffffffff ffffffff 001 v ACR_XPOnClientLoaded
 fp o
 f ffffffff ffffffff 001 v ACR_XPOnClientExit
+fp o
+f ffffffff ffffffff 001 v ACR_RPXPMarkActive
 fp o
 f ffffffff ffffffff 002 v _SetALFAXp
 fp o
@@ -1199,13 +1627,116 @@ f ffffffff ffffffff 003 v _ProcessMishap
 fp o
 fp i
 fp i
+f ffffffff ffffffff 000 s ACR_SERVER_IPC_SERVERCOM_SCRIPT
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_INITIALIZE
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_SIGNAL_IPC_EVENT
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_RESOLVE_CHARACTER_NAME_TO_PLAYER_ID
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_RESOLVE_PLAYER_NAME
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_RESOLVE_PLAYER_ID_TO_SERVER_ID
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_LIST_ONLINE_USERS
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_HANDLE_CHAT_EVENT
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_HANDLE_CLIENT_ENTER
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_IS_SERVER_ONLINE
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_ACTIVATE_SERVER_TO_SERVER_PORTAL
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_HANDLE_CLIENT_LEAVE
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_POPULATE_CHAT_SELECT
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_HANDLE_LATENCY_CHECK_RESPONSE
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_GET_PLAYER_LATENCY
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_DISABLE_CHARACTER_SAVE
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_ENABLE_CHARACTER_SAVE
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_EVENT_CHAT_TELL
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_EVENT_BROADCAST_NOTIFICATION
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_EVENT_DISCONNECT_PLAYER
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_EVENT_PURGE_CACHED_CHARACTER
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_EVENT_SHUTDOWN_SERVER
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_EVENT_PAGE
+f ffffffff ffffffff 000 i ACR_SERVER_IPC_MAX_EVENT_LENGTH
+f ffffffff ffffffff 001 v ACR_SignalServerIPCEvent
+fp t0001
+f ffffffff ffffffff 000 v ACR_ServerIPC_OnModuleLoad
+f ffffffff ffffffff 001 v ACR_ServerIPC_OnClientEnter
+fp o
+f ffffffff ffffffff 003 i ACR_ServerIPC_OnChat
+fp o
+fp i
+fp s
+f ffffffff ffffffff 003 v ACR_SendCrossServerTellByCharacter
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 v ACR_SendCrossServerTellByPlayer
+fp o
+fp s
+fp s
+f ffffffff ffffffff 002 v ACR_SendBroadcastNotification
+fp i
+fp s
+f ffffffff ffffffff 002 v ACR_SendDisconnectPlayer
+fp i
+fp i
+f ffffffff ffffffff 003 v ACR_SendPurgeCachedCharacter
+fp i
+fp i
+fp s
+f ffffffff ffffffff 002 v ACR_SendShutdownServer
+fp i
+fp s
+f ffffffff ffffffff 001 v ACR_SendOnlineUserList
+fp o
+f ffffffff ffffffff 002 v ACR_SendFeedbackError
+fp o
+fp s
+f ffffffff ffffffff 003 v ACR_DeliverLocalTell
+fp o
+fp i
+fp s
+f ffffffff ffffffff 003 v ACR_DeliverCrossServerTellConfirmation
+fp o
+fp s
+fp s
+f ffffffff ffffffff 001 o ACR_GetLocalPlayerByPlayerID
+fp i
+f ffffffff ffffffff 001 i ACR_GetPlayerIDByCharacterName
+fp s
+f ffffffff ffffffff 001 i ACR_GetPlayerIDByPlayerName
+fp s
+f ffffffff ffffffff 001 i ACR_GetPlayerLoggedOnServerID
+fp i
+f ffffffff ffffffff 001 i ACR_GetIsServerOnline
+fp i
+f ffffffff ffffffff 003 v ACR_StartServerToServerPortal
+fp i
+fp i
+fp o
+f ffffffff ffffffff 001 v ACR_PopulateChatSelect
+fp o
+f ffffffff ffffffff 001 v ACR_HandleLatencyCheckResponse
+fp o
+f ffffffff ffffffff 001 i ACR_GetPlayerLatency
+fp o
+f ffffffff ffffffff 001 i ACR_DisableCharacterSave
+fp o
+f ffffffff ffffffff 001 i ACR_EnableCharacterSave
+fp o
+f ffffffff ffffffff 008 i ACR_CallIPCScript
+fp i
+fp i
+fp i
+fp i
+fp i
+fp i
+fp s
+fp o
+f ffffffff ffffffff 001 v ACR_ServerIPC_OnClientLeave
+fp o
 f ffffffff ffffffff 000 i ACR_PTL_COOLDOWN
 f ffffffff ffffffff 000 s _ACR_PTL_PASSPORT
 f ffffffff ffffffff 000 s _ACR_PTL_RECORD
 f ffffffff ffffffff 000 s _ACR_PTL_TIMESTAMP
 f ffffffff ffffffff 000 s _ACR_PTL_PING
-f ffffffff ffffffff 003 v ACR_PortalPC_Start
+f ffffffff ffffffff 004 v ACR_PortalPC_Start
 fp o
+fp i
 fp i
 fp i
 f ffffffff ffffffff 001 i ACR_PortalCheckServer
@@ -1770,6 +2301,7 @@ f ffffffff ffffffff 000 s TXT_VOICE_TARGET_INVALID
 f ffffffff ffffffff 000 s TXT_BACK_BATTLE_STOP
 f ffffffff ffffffff 000 s TXT_COMMAND_NOT_FOUND
 f ffffffff ffffffff 000 s TXT_CREATURE
+f ffffffff ffffffff 000 s TXT_CREATURE_PC_ONLY
 f ffffffff ffffffff 000 s TXT_DAY_NIGHT
 f ffffffff ffffffff 000 s TXT_DAY_NIGHT_BATTLE
 f ffffffff ffffffff 000 s TXT_DM_PC_PARTY
@@ -3172,17 +3704,21 @@ f ffffffff ffffffff 000 s ACR_PPS_QUARANTINE_WP
 f ffffffff ffffffff 000 s ACR_PPS_QUARANTINE_AR_TAG
 f ffffffff ffffffff 000 s ACR_PPS_QUARANTINE_WP_TAG
 f ffffffff ffffffff 000 s ACR_PPS_QUARANTINED
+f ffffffff ffffffff 000 s ACR_PPS_QUARANTINED_AUTOPORTAL_TARGET
 f ffffffff ffffffff 000 s ACR_PPS_DEBUG_ID
 f ffffffff ffffffff 003 v ACR_PCSave
 fp o
 fp i
 fp i
-f ffffffff ffffffff 001 v ACR_PCAutoSave
+f ffffffff ffffffff 002 v ACR_PCAutoSave
 fp o
+fp i
 f ffffffff ffffffff 000 v ACR_PCOnModuleLoad
 f ffffffff ffffffff 001 v ACR_PCOnClientEnter
 fp o
 f ffffffff ffffffff 001 v ACR_PCOnPCLoaded
+fp o
+f ffffffff ffffffff 001 v ACR_PCOnPCLoadedAsDM
 fp o
 f ffffffff ffffffff 001 v ACR_PCOnClientLeave
 fp o
@@ -3191,12 +3727,22 @@ fp o
 fp i
 f ffffffff ffffffff 001 v ACR_PPSValidatePC
 fp o
+f ffffffff ffffffff 003 v ACR_PPSBootPC
+fp o
+fp s
+fp i
+f ffffffff ffffffff 001 v ACR_PCExportSingleCharacter
+fp o
 f ffffffff ffffffff 003 v _playerRestoreLocation
 fp o
 fp e2
 fp i
 f ffffffff ffffffff 001 v _playerFreeze
 fp o
+f ffffffff ffffffff 001 v _playerStartQuarantinePortalDialog
+fp i
+f ffffffff ffffffff 001 v _playerStartQuarantineAutoPortal
+fp i
 f ffffffff ffffffff 000 i ACR_PSO_RECORD_USERS
 f ffffffff ffffffff 000 i _ACR_PSO_EXPORT_PC_ONSAVE
 f ffffffff ffffffff 000 i _ACR_PSO_EXPORT_DM_ONSAVE
@@ -3380,86 +3926,6 @@ fp o
 fp i
 f ffffffff ffffffff 001 v _DoSubduedAnimation
 fp o
-f ffffffff ffffffff 000 i POST_COLOR_RED
-f ffffffff ffffffff 000 i POST_COLOR_GREEN
-f ffffffff ffffffff 000 i POST_COLOR_BLUE
-f ffffffff ffffffff 000 i POST_COLOR_WHITE
-f ffffffff ffffffff 000 i POST_COLOR_BLACK
-f ffffffff ffffffff 000 i POST_COLOR_OFFSET
-f ffffffff ffffffff 000 i POST_COLOR_DEBUG
-f ffffffff ffffffff 000 i POST_COLOR_ERROR
-f ffffffff ffffffff 000 i LINE_SIZE
-f ffffffff ffffffff 000 i PRETTY_LINE_WRAP
-f ffffffff ffffffff 000 i PRETTY_X_OFFSET
-f ffffffff ffffffff 000 i PRETTY_Y_OFFSET
-f ffffffff ffffffff 000 f PRETTY_DURATION
-f ffffffff ffffffff 000 f DURATION_NORMAL
-f ffffffff ffffffff 000 f DURATION_LONG
-f ffffffff ffffffff 001 o GetFirstPCInFaction
-fp o
-f ffffffff ffffffff 006 v Message
-fp s
-fp i
-fp i
-fp f
-fp i
-fp i
-f ffffffff ffffffff 005 v ErrorMessage
-fp s
-fp i
-fp i
-fp f
-fp i
-f ffffffff ffffffff 005 v DebugMessage
-fp s
-fp i
-fp i
-fp f
-fp i
-f ffffffff ffffffff 002 v OldFunctionMessage
-fp s
-fp s
-f ffffffff ffffffff 005 v MessageLine
-fp i
-fp s
-fp i
-fp f
-fp i
-f ffffffff ffffffff 005 v DebugMessageLine
-fp i
-fp s
-fp i
-fp f
-fp i
-f ffffffff ffffffff 004 v PrettyPostString
-fp o
-fp s
-fp f
-fp i
-f ffffffff ffffffff 003 v PrettyDebug
-fp s
-fp f
-fp i
-f ffffffff ffffffff 003 v PrettyError
-fp s
-fp f
-fp i
-f ffffffff ffffffff 003 v PrettyMessage
-fp s
-fp f
-fp i
-f ffffffff ffffffff 006 v Backdrop
-fp o
-fp s
-fp i
-fp i
-fp f
-fp i
-f ffffffff ffffffff 001 v SendMessageToAllPlayersByStrRef
-fp i
-f ffffffff ffffffff 002 v SendMessageToPartyByStrRef
-fp o
-fp i
 f ffffffff ffffffff 000 i NW_TALENT_PROTECT
 f ffffffff ffffffff 000 i NW_TALENT_ENHANCE
 f ffffffff ffffffff 003 i GetMatchCompatibility
@@ -3815,7 +4281,7 @@ f ffffffff ffffffff 003 v RemoveSpellEffects
 fp i
 fp o
 fp o
-f 000003c3 00000477 002 v RemoveSpecificEffect
+f 0000041d 000004d1 002 v RemoveSpecificEffect
 fp i
 fp o
 f ffffffff ffffffff 002 f GetSpellEffectDelay
@@ -4396,134 +4862,6 @@ fp i
 fp i
 f ffffffff ffffffff 001 i GetBehaviorState
 fp i
-f ffffffff ffffffff 000 f DISTANCE_TINY
-f ffffffff ffffffff 000 f DISTANCE_SHORT
-f ffffffff ffffffff 000 f DISTANCE_MEDIUM
-f ffffffff ffffffff 000 f DISTANCE_LARGE
-f ffffffff ffffffff 000 f DISTANCE_HUGE
-f ffffffff ffffffff 001 s LocationToString
-fp e2
-f ffffffff ffffffff 001 s VectorToString
-fp t0000
-f ffffffff ffffffff 002 v MoveToNewLocation
-fp e2
-fp o
-f ffffffff ffffffff 002 f GetChangeInX
-fp f
-fp f
-f ffffffff ffffffff 002 f GetChangeInY
-fp f
-fp f
-f ffffffff ffffffff 003 t0000 GetChangedPosition
-fp t0000
-fp f
-fp f
-f ffffffff ffffffff 002 f GetAngleBetweenLocations
-fp e2
-fp e2
-f ffffffff ffffffff 001 f GetOppositeDirection
-fp f
-f ffffffff ffffffff 001 f GetRightDirection
-fp f
-f ffffffff ffffffff 001 f GetHalfRightDirection
-fp f
-f ffffffff ffffffff 001 f GetFarRightDirection
-fp f
-f ffffffff ffffffff 002 f GetCustomRightDirection
-fp f
-fp f
-f ffffffff ffffffff 001 f GetLeftDirection
-fp f
-f ffffffff ffffffff 001 f GetHalfLeftDirection
-fp f
-f ffffffff ffffffff 001 f GetFarLeftDirection
-fp f
-f ffffffff ffffffff 002 f GetCustomLeftDirection
-fp f
-fp f
-f ffffffff ffffffff 002 v TurnToFaceObject
-fp o
-fp o
-f ffffffff ffffffff 002 e2 GetFlankingRightLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetFlankingLeftLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetOppositeLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetAheadLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetBehindLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetForwardFlankingRightLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetForwardFlankingLeftLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetAheadRightLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetAheadLeftLocation
-fp o
-fp f
-f ffffffff ffffffff 001 e2 GetStepLeftLocation
-fp o
-f ffffffff ffffffff 001 e2 GetStepRightLocation
-fp o
-f ffffffff ffffffff 003 e2 GetRandomLocation
-fp o
-fp o
-fp f
-f ffffffff ffffffff 003 f GetAngle
-fp t0000
-fp t0000
-fp f
-f ffffffff ffffffff 002 f GetAngleBetweenObjects
-fp o
-fp o
-f ffffffff ffffffff 003 i IsDirectionWithinTolerance
-fp f
-fp f
-fp f
-f ffffffff ffffffff 002 i IsFacingWithin
-fp f
-fp o
-f ffffffff ffffffff 003 i IsPlaceableInView
-fp o
-fp f
-fp f
-f ffffffff ffffffff 002 i IsCreatureInView
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetLeftLocation
-fp o
-fp f
-f ffffffff ffffffff 002 e2 GetRightLocation
-fp o
-fp f
-f ffffffff ffffffff 001 v SpeakLocation
-fp e2
-f ffffffff ffffffff 001 v PrintLocation
-fp e2
-f ffffffff ffffffff 001 f GetNormalizedDirection
-fp f
-f ffffffff ffffffff 004 e2 GenerateNewLocation
-fp o
-fp f
-fp f
-fp f
-f ffffffff ffffffff 004 e2 GenerateNewLocationFromLocation
-fp e2
-fp f
-fp f
-fp f
-f ffffffff ffffffff 001 e2 GetCenterPointOfArea
-fp o
 f ffffffff ffffffff 000 s sModeVarname
 f ffffffff ffffffff 000 i NW_MODE_STEALTH
 f ffffffff ffffffff 000 i NW_MODE_DETECT
@@ -4620,12 +4958,12 @@ fp i
 f ffffffff ffffffff 002 o GetNearestSeenFriend
 fp o
 fp i
-f ffffffff ffffffff 002 t0003 CountEnemiesAndAllies
+f ffffffff ffffffff 002 t0004 CountEnemiesAndAllies
 fp f
 fp o
-f ffffffff ffffffff 000 t0002 DetermineEnemies
+f ffffffff ffffffff 000 t0003 DetermineEnemies
 f ffffffff ffffffff 001 s GetMostDangerousClass
-fp t0002
+fp t0003
 f ffffffff ffffffff 001 i GetIsMeleeAttacker
 fp o
 f ffffffff ffffffff 001 i GetIsRangedAttacker
@@ -4882,7 +5220,7 @@ f ffffffff ffffffff 000 i GetCRMax
 f ffffffff ffffffff 002 i bkEvaluationSanityCheck
 fp o
 fp f
-f ffffffff ffffffff 002 t0004 TalentSpellFilter
+f ffffffff ffffffff 002 t0005 TalentSpellFilter
 fp e3
 fp o
 f ffffffff ffffffff 003 i TalentFilter
@@ -4960,10 +5298,10 @@ fp o
 f ffffffff ffffffff 002 e3 MyGetCreatureTalent
 fp i
 fp i
-f ffffffff ffffffff 002 t0005 GetBestEldritchAOETarget
+f ffffffff ffffffff 002 t0006 GetBestEldritchAOETarget
 fp i
 fp f
-f ffffffff ffffffff 001 t0006 GetBestEldritchShape
+f ffffffff ffffffff 001 t0007 GetBestEldritchShape
 fp o
 f ffffffff ffffffff 001 i GetInvocationSpellFromMetamagic
 fp i
@@ -5442,7 +5780,7 @@ f ffffffff ffffffff 001 i GetHPPercentage
 fp o
 f ffffffff ffffffff 001 i GetCastingMode
 fp i
-f ffffffff ffffffff 007 t0007 CreateTactics
+f ffffffff ffffffff 007 t0008 CreateTactics
 fp i
 fp i
 fp i
@@ -5454,20 +5792,20 @@ f ffffffff ffffffff 003 i TryClassTactic
 fp o
 fp i
 fp i
-f ffffffff ffffffff 004 t0007 CalculateTacticsByClass
-fp t0007
+f ffffffff ffffffff 004 t0008 CalculateTacticsByClass
+fp t0008
 fp o
 fp i
 fp i
-f ffffffff ffffffff 006 t0007 CalculateTactics
-fp t0007
+f ffffffff ffffffff 006 t0008 CalculateTactics
+fp t0008
 fp o
 fp f
 fp i
 fp i
 fp i
 f ffffffff ffffffff 007 i DetermineActionFromTactics
-fp t0007
+fp t0008
 fp o
 fp f
 fp i
@@ -6047,6 +6385,20 @@ fp i
 f ffffffff ffffffff 000 i ACR_SKILLS_NUMBER
 f ffffffff ffffffff 000 s CHECK_COLOUR1
 f ffffffff ffffffff 000 s CHECK_COLOUR2
+f ffffffff ffffffff 000 i CHECK_TYPE_SKILL
+f ffffffff ffffffff 000 i CHECK_TYPE_STAT
+f ffffffff ffffffff 000 i CHECK_TYPE_SAVE
+f ffffffff ffffffff 000 i CHECK_TYPE_INITIATIVE
+f ffffffff ffffffff 000 i CHECK_TYPE_ROLL
+f ffffffff ffffffff 000 i CHECK_TYPE_TRACK
+f ffffffff ffffffff 000 i CHECK_TYPE_PERCEPTION
+f ffffffff ffffffff 000 i CHECK_TYPE_STEALTH
+f ffffffff ffffffff 005 i ACR_InitCheck
+fp o
+fp i
+fp i
+fp i
+fp i
 f ffffffff ffffffff 006 i ACR_SkillCheck
 fp i
 fp o
@@ -6092,6 +6444,14 @@ f ffffffff ffffffff 001 i ACR_SkillsCheckIsPCAdapted
 fp o
 f ffffffff ffffffff 001 v ACR_SkillsPrepareAdaption
 fp o
+f ffffffff ffffffff 007 i _Check
+fp i
+fp o
+fp i
+fp i
+fp i
+fp i
+fp i
 f ffffffff ffffffff 002 i _IsClassSkill
 fp i
 fp o
@@ -6139,8 +6499,10 @@ f ffffffff ffffffff 003 v _SendRollMessage
 fp o
 fp s
 fp i
-f ffffffff ffffffff 005 i ACR_InitCheck
+f ffffffff ffffffff 007 v ACR_Checks
+fp i
 fp o
+fp i
 fp i
 fp i
 fp i
@@ -6169,6 +6531,7 @@ f ffffffff ffffffff 000 s ACR_REST_DISEASE_CHANCE
 f ffffffff ffffffff 000 s ACR_REST_TENT
 f ffffffff ffffffff 000 s ACR_REST_BEDROLL
 f ffffffff ffffffff 000 s ACR_REST_OFFCAMERA_DAYS
+f ffffffff ffffffff 000 s ACR_FREE_SPELL_PREP
 f ffffffff ffffffff 000 s ACR_REST_TENT_TAG
 f ffffffff ffffffff 000 s ACR_REST_BEDROLL_TAG
 f ffffffff ffffffff 000 s ACR_REST_CAMPFIRE_TAG
@@ -6263,10 +6626,12 @@ f ffffffff ffffffff 000 f _MOBLOOT_DISTANCE
 f ffffffff ffffffff 000 i _MOBLOOT_LOOT_ITEM_CHANCE
 f ffffffff ffffffff 000 i _MOBLOOT_LOOT_CREATURE_CHANCE
 f ffffffff ffffffff 000 s _MOBLOOT_SYSTEM_NAME
+f ffffffff ffffffff 000 s _MOBLOOT_CHEST_TAG
 f ffffffff ffffffff 002 v _TransferAllItems
 fp o
 fp o
-f ffffffff ffffffff 003 v _TransferItem
+f ffffffff ffffffff 004 v _TransferItem
+fp o
 fp o
 fp o
 fp o
@@ -6297,6 +6662,7 @@ f ffffffff ffffffff 000 i _ACR_DTH_FLOOR
 f ffffffff ffffffff 000 s _ACR_DTH_DAMAGER
 f ffffffff ffffffff 000 s _ACR_DTH_RECALLABLE
 f ffffffff ffffffff 000 f ACR_DTH_RECALL_SPIRIT_WINDOW
+f ffffffff ffffffff 000 s ACR_DTH_JUST_FLOORED
 f ffffffff ffffffff 002 v ACR_PlayerOnDeath
 fp o
 fp o
@@ -6510,6 +6876,7 @@ f ffffffff ffffffff 000 s _SPAWN_DESPAWN_DELAY_GF
 f ffffffff ffffffff 000 s _SPAWN_REFRESH_DELAY_GF
 f ffffffff ffffffff 000 s _SPAWN_PRESPAWN_SEAMLESS_GB
 f ffffffff ffffffff 000 s _SPAWN_PRESPAWN_PREDICTION_GB
+f ffffffff ffffffff 000 s ACR_LOG_SPAWNS
 f ffffffff ffffffff 004 v ACR_InitializeSpawns
 fp f
 fp f
@@ -6652,7 +7019,7 @@ fp o
 f ffffffff ffffffff 000 s ACR_SCRY_OBJECT
 f ffffffff ffffffff 000 i ACR_SCRY_CREATURE
 f ffffffff ffffffff 000 i ACR_SCRY_LOCATION
-f 000001ff 000003c3 001 v ACR_ScryEnd
+f 00000259 0000041d 001 v ACR_ScryEnd
 fp o
 f ffffffff ffffffff 002 v ACR_ScryBegin
 fp o
@@ -6671,7 +7038,7 @@ fp e2
 fp o
 f ffffffff ffffffff 001 i ACR_GetIsNonDetectable
 fp o
-f 000001c2 000001ff 001 i ACR_GetIsScrying
+f 0000021c 00000259 001 i ACR_GetIsScrying
 fp o
 f ffffffff ffffffff 002 i ACR_GetIsScryingTarget
 fp o
@@ -6905,6 +7272,148 @@ f ffffffff ffffffff 001 v ACR_FeatOnClientEnter
 fp o
 f ffffffff ffffffff 002 v ACR_FeatOnUnequipItem
 fp o
+fp o
+f ffffffff ffffffff 000 s ACR_SERVER_MISC_SUPPORT_SCRIPT
+f ffffffff ffffffff 000 s ACR_SERVER_MISC_OBJECT_RETVAL_VAR
+f ffffffff ffffffff 000 i ACR_SERVER_MISC_EXECUTE_UPDATER_SCRIPT
+f ffffffff ffffffff 000 i ACR_SERVER_MISC_CREATE_AREA_INSTANCE
+f ffffffff ffffffff 000 i ACR_SERVER_MISC_RELEASE_AREA_INSTANCE
+f ffffffff ffffffff 000 i ACR_SERVER_MISC_RUN_POWERSHELL_SCRIPTLET
+f ffffffff ffffffff 000 i ACR_ExecuteServerUpdaterScript
+f ffffffff ffffffff 001 o ACR_InternalCreateAreaInstance
+fp o
+f ffffffff ffffffff 001 v ACR_InternalReleaseAreaInstance
+fp o
+f ffffffff ffffffff 002 i ACR_RunPowerShellScriptlet
+fp s
+fp o
+f ffffffff ffffffff 007 i ACR_CallServerMiscScript
+fp i
+fp i
+fp i
+fp s
+fp s
+fp o
+fp o
+f ffffffff ffffffff 000 s ACR_SRVADMIN_RUNSCRIPTLET_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_RUNSCRIPT_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_GETGLOBALI_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_GETGLOBALF_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_GETGLOBALS_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_GETMODULEI_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_GETMODULEF_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_GETMODULES_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_GETMODULEO_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_LOADSCRIPT_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_BOOT_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_DUMPVARS_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_DUMPAREAS_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_DUMPAREAOBJECTS_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_RUNUPDATER_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_JUMP_PREFIX
+f ffffffff ffffffff 000 s ACR_SRVADMIN_SCRIPT_NAME
+f ffffffff ffffffff 000 s ACR_SRVADMIN_SCRIPTLOADER_NAME
+f ffffffff ffffffff 002 i ACR_SrvAdmin_OnChat
+fp o
+fp s
+f ffffffff ffffffff 002 v ACR_SrvAdmin_SendFeedback
+fp o
+fp s
+f ffffffff ffffffff 002 i ACR_IsStrPrefix
+fp s
+fp s
+f ffffffff ffffffff 002 v ACR_SrvAdmin_LogCommand
+fp o
+fp s
+f ffffffff ffffffff 001 s ACR_SrvAdmin_DumpObject
+fp o
+f ffffffff ffffffff 001 s ACR_SrvAdmin_GetObjectTypeName
+fp o
+f ffffffff ffffffff 002 v ACR_SrvAdmin_DumpVariables
+fp o
+fp o
+f ffffffff ffffffff 002 v ACR_SrvAdmin_DumpAreaObjects
+fp o
+fp o
+f ffffffff ffffffff 002 o ACR_SrvAdmin_TranslateObject
+fp s
+fp o
+f ffffffff ffffffff 000 s ACR_VERSION
+f ffffffff ffffffff 000 s ACR_GetVersion
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_PER_AREA_MAP_CONTROLS
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_ENVIRON
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_DOORS
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_TRAPS
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_CREATURES
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_PATHING
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_PINS
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_NO_MAP_BACKGROUND
+f ffffffff ffffffff 000 i ACR_SCLIEXT_FEATURE_DM_AREA_POLLING
+f ffffffff ffffffff 000 s ACR_SCLIEXT_VERSION
+f ffffffff ffffffff 000 s ACR_SCLIEXT_FEATURES
+f ffffffff ffffffff 000 i ACR_SCLIEXT_DEFAULT_FEATURE_BITS
+f ffffffff ffffffff 000 s ACR_SCLIEXT_URL
+f ffffffff ffffffff 000 s ACR_SCLIEXT_URL_AND_FORUM_INFO
+f ffffffff ffffffff 000 s ACR_SCLIEXT_DISABLE_EXISTANCE_CHECK
+f ffffffff ffffffff 004 i ACR_MakeClientExtensionVersion
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 001 i ACR_GetPlayerClientExtensionVersion
+fp o
+f ffffffff ffffffff 001 i ACR_GetPlayerClientExtensionFeatures
+fp o
+f ffffffff ffffffff 001 v ACR_SCliExtOnPCLoaded
+fp o
+f ffffffff ffffffff 001 v ACR_SCliExtOnClientLeave
+fp o
+f ffffffff ffffffff 001 v ACR_CheckForClientExtensionInstalled
+fp o
+f ffffffff ffffffff 002 v ACR_OpenChatInputBox
+fp o
+fp s
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_ON_CREATE_SCRIPT
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_ON_DELETE_SCRIPT
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_ENABLE_CACHE
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_CLEANUP_DELAY
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_PARENT_AREA
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_IS_ON_FREE_LIST
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_CLEANUP_TASK_RUNNING
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_FIRST_DYNAMIC_OBJECT
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_HAD_ACTIVITY
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_ORIGINAL_ONLEAVE_SCRIPT
+f ffffffff ffffffff 000 i ACR_AREA_INSTANCE_OBJECTS_PER_DELETION_CYCLE
+f ffffffff ffffffff 000 s ACR_AREA_INSTANCE_ONLEAVE_ACR_SCRIPT
+f ffffffff ffffffff 002 o ACR_CreateAreaInstance
+fp o
+fp f
+f ffffffff ffffffff 001 v ACR_ReleaseAreaInstance
+fp o
+f ffffffff ffffffff 001 i ACR_IsInstancedArea
+fp o
+f ffffffff ffffffff 001 o ACR_GetInstancedAreaTemplate
+fp o
+f ffffffff ffffffff 002 i ACR_IsAreaEmptyOfPlayers
+fp o
+fp o
+f ffffffff ffffffff 001 f ACR_GetAreaCleanupDelay
+fp o
+f ffffffff ffffffff 002 v ACR_AreaInstance_OnClientLeave
+fp o
+fp i
+f ffffffff ffffffff 002 v ACR__DeleteAreaInstance
+fp o
+fp o
+f ffffffff ffffffff 001 i ACR__IsAreaInstanceDeleting
+fp o
+f ffffffff ffffffff 002 v ACR__StartAreaCleanupTask
+fp o
+fp f
+f ffffffff ffffffff 002 v ACR__AreaCleanupTask
+fp o
+fp f
+f ffffffff ffffffff 001 v ACR__CallOriginalOnLeaveHandler
 fp o
 f ffffffff ffffffff 000 f _SPAWN_AREA_DESPAWN_DELAY
 f ffffffff ffffffff 000 f _SPAWN_REFRESH_DELAY
@@ -7212,6 +7721,12 @@ f ffffffff ffffffff 003 s DMFI_ProcessLanguage
 fp s
 fp s
 fp o
+f ffffffff ffffffff 002 v ParseRoll
+fp o
+fp s
+f ffffffff ffffffff 002 i ACR_RollCompareLeft
+fp s
+fp s
 f ffffffff ffffffff 000 s _ONLOAD_DEBUG
 f ffffffff ffffffff 000 s ACR_MOD_STATUS
 f ffffffff ffffffff 000 s ACR_MOD_SPELLBOOK
@@ -7219,8 +7734,12 @@ f ffffffff ffffffff 000 s ACR_MOD_HOLYSYMBOL
 f ffffffff ffffffff 000 s ACR_MOD_STARTINGGOLD
 f ffffffff ffffffff 000 s ACR_MOD_STARTARMORX
 f ffffffff ffffffff 000 s ACR_MOD_FIRSTAID_IT
+f ffffffff ffffffff 000 s ACR_MOD_LAST_TELL_TO
+f ffffffff ffffffff 000 s ACR_MOD_LAST_TELL_FROM
 f ffffffff ffffffff 000 i ACR_MOD_NWNX_FAILED
 f ffffffff ffffffff 000 f ACR_MOD_RELOAD_CYCLE
+f ffffffff ffffffff 000 f ACR_TALK_SPHERE_RADIUS
+f ffffffff ffffffff 000 f ACR_WHISPER_SPHERE_RADIUS
 f ffffffff ffffffff 000 v ACR_ModuleOnModuleLoad
 f ffffffff ffffffff 000 v ACR_ModuleOnModuleStart
 f ffffffff ffffffff 000 v ACR_ModuleOnClientEnter
@@ -7238,7 +7757,7 @@ f ffffffff ffffffff 000 v ACR_ModuleOnHeartbeat
 f ffffffff ffffffff 000 v ACR_ModuleOnUserDefined
 f ffffffff ffffffff 000 v ACR_ModuleOnPlayerEquip
 f ffffffff ffffffff 000 v ACR_ModuleOnPlayerUnequip
-f 00000181 000001c2 000 v ACR_ModuleOnCutsceneAbort
+f 000001db 0000021c 000 v ACR_ModuleOnCutsceneAbort
 f ffffffff ffffffff 004 i ACR_ModuleOnChat
 fp o
 fp o
@@ -7248,9 +7767,8 @@ f ffffffff ffffffff 001 i ACR_GetModuleStatus
 fp i
 f ffffffff ffffffff 001 v ACR_SetModuleStatus
 fp i
-f ffffffff ffffffff 002 v _ParseRoll
-fp o
-fp s
+f ffffffff ffffffff 000 v ACR_ModuleInitHealthChecks
+f ffffffff ffffffff 000 v ACR_StartModuleInitHealthChecks
 f ffffffff ffffffff 002 s _ParseLang
 fp o
 fp s
@@ -7259,101 +7777,109 @@ fp o
 fp s
 fp i
 fp s
+f ffffffff ffffffff 000 v ACR_ModuleInit_ForceLinkageForCLRScripts
 f ffffffff ffffffff 000 v ACR_ModuleOnUnAcquireItem
-f ffffffff ffffffff 002 i _CompareLeft
-fp s
-fp s
-f 00000179 00000181 000 v main
+f 000001d3 000001db 000 v main
 f 0000000d 00000015 000 v #loader
-f 00000015 00000179 000 v #globals
-v 00000017 ffffffff 00000000 s _DEBUG_MESSAGE_PREFIX_FATAL
-v 00000032 ffffffff 00000004 s _DEBUG_MESSAGE_PREFIX_WARNING
-v 0000004f ffffffff 00000008 s _DEBUG_MESSAGE_PREFIX_INFO
-v 00000063 ffffffff 0000000c s _DEBUG_SYSTEMS_LSA
-v 00000081 ffffffff 00000010 s _DEBUG_TARGETS_INFO_LI
-v 000000a0 ffffffff 00000014 s _DEBUG_TARGETS_WARNING_LI
-v 000000bf ffffffff 00000018 s _DEBUG_TARGETS_FATAL_LI
-v 000000de ffffffff 0000001c s currentList
-v 000000f2 ffffffff 00000020 s PRETTY_LINE_COUNT_VAR
+f 00000015 000001d3 000 v #globals
+v 00000017 ffffffff 00000000 s PRETTY_LINE_COUNT_VAR
+v 0000003e ffffffff 00000004 s _DEBUG_MESSAGE_PREFIX_FATAL
+v 00000059 ffffffff 00000008 s _DEBUG_MESSAGE_PREFIX_WARNING
+v 00000076 ffffffff 0000000c s _DEBUG_MESSAGE_PREFIX_INFO
+v 0000008a ffffffff 00000010 s _DEBUG_SYSTEMS_LSA
+v 000000a8 ffffffff 00000014 s _DEBUG_TARGETS_INFO_LI
+v 000000c7 ffffffff 00000018 s _DEBUG_TARGETS_WARNING_LI
+v 000000e6 ffffffff 0000001c s _DEBUG_TARGETS_FATAL_LI
+v 00000105 ffffffff 00000020 s currentList
 v 00000119 ffffffff 00000024 s X0_DATABASE_DEFAULT
 v 00000143 ffffffff 00000028 s X0_DATABASE_XP1
-v 00000183 000001ba 00000000 o oPC
-v 000001c2 000001fd 00000000 i #retval
-v 000001c2 000001f7 00000004 o oCreature
-v 000001ff 000003bb 00000000 o oCaster
-v 0000028a 000003b5 00000004 e2 oLocation
-v 000003c3 0000046f 00000000 o oTarget
-v 000003c3 0000046f 00000004 i nEffectTypeID
-v 000003c5 00000469 00000008 e0 eAOE
-l00 0000058 00000015 00000030
-l00 0000059 00000030 0000004d
-l00 0000060 0000004d 00000061
-l00 0000062 00000061 0000007f
-l00 0000064 0000007f 0000009e
-l00 0000065 0000009e 000000bd
-l00 0000066 000000bd 000000dc
-l01 0000234 000000dc 000000f0
-l02 0000113 000000f0 000000f0
-l02 0000114 000000f0 000000f0
-l02 0000115 000000f0 000000f0
-l02 0000116 000000f0 000000f0
-l03 0000048 000000f0 00000117
-l04 0000051 00000117 00000141
-l04 0000053 00000141 00000167
-l05 0000040 00000167 00000167
-l05 0000041 00000167 00000167
-l05 0000042 00000167 00000167
-l05 0000043 00000167 00000167
-l05 0000044 00000167 00000167
-l05 0000045 00000167 00000167
-l05 0000046 00000167 00000167
-l05 0000047 00000167 00000167
-l05 0000048 00000167 00000167
-l05 0000049 00000167 00000167
-l05 0000056 00000167 00000167
-l05 0000057 00000167 00000167
-l05 0000058 00000167 00000167
-l05 0000059 00000167 00000167
-l06 0000085 00000167 00000167
-l06 0000087 00000167 00000167
-l06 0000088 00000167 00000167
-l07 0000023 00000167 00000167
-l07 0000024 00000167 00000167
-l07 0000029 00000167 00000167
-l07 0000030 00000167 00000167
-l08 0000207 00000167 00000167
-l08 0000208 00000167 00000167
-l08 0000209 00000167 00000167
-l08 0000210 00000167 00000167
-l08 0000211 00000167 00000167
-l08 0000213 00000167 00000167
-l08 0000214 00000167 00000167
-l71 0000047 00000179 0000017f
-l71 0000050 0000017f 00000181
-l70 0000675 00000181 00000196
-l70 0000678 00000196 000001a6
-l70 0000679 000001c0 000001c2
-l59 0000277 000001c2 000001f7
-l59 0000278 000001f7 000001ff
-l59 0000193 000001ff 00000220
-l59 0000195 00000226 00000247
-l59 0000198 00000247 00000252
-l59 0000201 00000252 00000288
-l59 0000204 00000288 000002ba
-l59 0000205 000002ba 000002de
-l59 0000207 000002de 000002e9
-l59 0000210 000002e9 00000314
-l59 0000211 00000314 0000033f
-l59 0000214 0000033f 00000369
-l59 0000217 00000369 00000393
-l59 0000219 00000393 000003b5
-l59 0000221 000003bb 000003c3
-l31 0001012 000003c3 000003c5
-l31 0001014 000003c5 000003e0
-l31 0001015 000003e0 000003f3
-l31 0001017 000003f3 0000040a
-l31 0001020 00000410 00000425
-l31 0001021 00000425 00000440
-l31 0001023 00000446 00000448
-l31 0001026 00000448 00000463
-l31 0001029 0000046f 00000477
+v 00000169 ffffffff 0000002c i ACR_DTH_UNCONSCIOUS_ROUNDS
+v 00000196 ffffffff 00000030 i ACR_DTH_NATHEALING_ROUNDS
+v 000001dd 00000214 00000000 o oPC
+v 0000021c 00000257 00000000 i #retval
+v 0000021c 00000251 00000004 o oCreature
+v 00000259 00000415 00000000 o oCaster
+v 000002e4 0000040f 00000004 e2 oLocation
+v 0000041d 000004c9 00000000 o oTarget
+v 0000041d 000004c9 00000004 i nEffectTypeID
+v 0000041f 000004c3 00000008 e0 eAOE
+l00 0000048 00000015 0000003c
+l01 0000058 0000003c 00000057
+l01 0000059 00000057 00000074
+l01 0000060 00000074 00000088
+l01 0000062 00000088 000000a6
+l01 0000064 000000a6 000000c5
+l01 0000065 000000c5 000000e4
+l01 0000066 000000e4 00000103
+l02 0000125 00000103 00000103
+l02 0000126 00000103 00000103
+l02 0000127 00000103 00000103
+l02 0000128 00000103 00000103
+l02 0000129 00000103 00000103
+l02 0000130 00000103 00000103
+l03 0000234 00000103 00000117
+l04 0000114 00000117 00000117
+l04 0000115 00000117 00000117
+l04 0000116 00000117 00000117
+l04 0000117 00000117 00000117
+l05 0000051 00000117 00000141
+l05 0000053 00000141 00000167
+l06 0000040 00000167 00000167
+l06 0000041 00000167 00000167
+l06 0000042 00000167 00000167
+l06 0000043 00000167 00000167
+l06 0000044 00000167 00000167
+l06 0000045 00000167 00000167
+l06 0000046 00000167 00000167
+l06 0000047 00000167 00000167
+l06 0000048 00000167 00000167
+l06 0000049 00000167 00000167
+l06 0000056 00000167 00000167
+l06 0000057 00000167 00000167
+l06 0000058 00000167 00000167
+l06 0000059 00000167 00000167
+l07 0000085 00000167 00000167
+l07 0000087 00000167 00000167
+l07 0000088 00000167 00000167
+l08 0000023 00000167 00000167
+l08 0000024 00000167 00000167
+l08 0000029 00000167 00000167
+l08 0000030 00000167 00000167
+l09 0000207 00000167 00000167
+l09 0000208 00000167 00000167
+l09 0000209 00000167 00000167
+l09 0000210 00000167 00000167
+l09 0000211 00000167 00000167
+l09 0000213 00000167 00000167
+l09 0000214 00000167 00000167
+l10 0000162 00000167 00000194
+l10 0000166 00000194 000001c1
+l79 0000047 000001d3 000001d9
+l79 0000050 000001d9 000001db
+l78 0000758 000001db 000001f0
+l78 0000761 000001f0 00000200
+l78 0000762 0000021a 0000021c
+l61 0000277 0000021c 00000251
+l61 0000278 00000251 00000259
+l61 0000193 00000259 0000027a
+l61 0000195 00000280 000002a1
+l61 0000198 000002a1 000002ac
+l61 0000201 000002ac 000002e2
+l61 0000204 000002e2 00000314
+l61 0000205 00000314 00000338
+l61 0000207 00000338 00000343
+l61 0000210 00000343 0000036e
+l61 0000211 0000036e 00000399
+l61 0000214 00000399 000003c3
+l61 0000217 000003c3 000003ed
+l61 0000219 000003ed 0000040f
+l61 0000221 00000415 0000041d
+l35 0001018 0000041d 0000041f
+l35 0001020 0000041f 0000043a
+l35 0001021 0000043a 0000044d
+l35 0001023 0000044d 00000464
+l35 0001026 0000046a 0000047f
+l35 0001027 0000047f 0000049a
+l35 0001029 000004a0 000004a2
+l35 0001032 000004a2 000004bd
+l35 0001035 000004c9 000004d1
