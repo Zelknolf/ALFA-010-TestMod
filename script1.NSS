@@ -517,7 +517,7 @@ void main()
     {
         string sName = GetName(oRowPC);
 
-        string sAlignIcon = "acr_";
+        string sAlignIcon = "align_";
         int nGoodEvil = GetAlignmentGoodEvil(oRowPC);
         int nLawChaos = GetAlignmentLawChaos(oRowPC);
         if(nGoodEvil == ALIGNMENT_GOOD)
