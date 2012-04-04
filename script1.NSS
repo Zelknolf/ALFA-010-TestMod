@@ -529,7 +529,7 @@ void main()
         else if(nGoodEvil == ALIGNMENT_NEUTRAL)
         {
             if(nLawChaos == ALIGNMENT_LAWFUL)       sAlignIcon += "ln.tga";
-            else if(nLawChaos == ALIGNMENT_NEUTRAL) sAlignIcon += "tn.tga";
+            else if(nLawChaos == ALIGNMENT_NEUTRAL) sAlignIcon += "n.tga";
             else                                    sAlignIcon += "cn.tga";
         }
         else
