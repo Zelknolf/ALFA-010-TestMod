@@ -1,5 +1,5 @@
 NDB V1.0
-0000080 0000009 0004618 0000319 0000762
+0000080 0000009 0004622 0000319 0000762
 n00 ginc_debug
 n01 acr_debug_i
 n02 acr_server_ipc_i
@@ -6614,7 +6614,7 @@ fp o
 f ffffffff ffffffff 002 v _ProcessOffCameraRest
 fp o
 fp i
-f ffffffff ffffffff 001 i _getArmorRestDC
+f ffffffff ffffffff 001 i _getSufferArmorFatigue
 fp o
 f ffffffff ffffffff 001 i _playerHasBedroll
 fp o
@@ -7402,6 +7402,8 @@ fp o
 f ffffffff ffffffff 002 v ACR_AreaInstance_OnClientLeave
 fp o
 fp i
+f ffffffff ffffffff 001 v ACR_AreaInstance_StartupCleanup
+fp o
 f ffffffff ffffffff 002 v ACR__DeleteAreaInstance
 fp o
 fp o
@@ -7414,6 +7416,8 @@ f ffffffff ffffffff 002 v ACR__AreaCleanupTask
 fp o
 fp f
 f ffffffff ffffffff 001 v ACR__CallOriginalOnLeaveHandler
+fp o
+f ffffffff ffffffff 001 i ACR_IsWalkmeshHelper
 fp o
 f ffffffff ffffffff 000 f _SPAWN_AREA_DESPAWN_DELAY
 f ffffffff ffffffff 000 f _SPAWN_REFRESH_DELAY
@@ -7768,6 +7772,9 @@ fp i
 f ffffffff ffffffff 001 v ACR_SetModuleStatus
 fp i
 f ffffffff ffffffff 000 v ACR_ModuleInitHealthChecks
+f ffffffff ffffffff 000 v ACR_PerformModuleStartupCleanup
+f ffffffff ffffffff 001 v ACR_SweepAreaOfUnneededObjects
+fp o
 f ffffffff ffffffff 000 v ACR_StartModuleInitHealthChecks
 f ffffffff ffffffff 002 s _ParseLang
 fp o
@@ -8154,18 +8161,18 @@ l10 0000162 00000167 00000194
 l10 0000166 00000194 000001c1
 l79 0000047 000001d3 000001d9
 l79 0000050 000001d9 000001db
-l78 0000615 000001db 000001f0
-l78 0000616 000001f0 00000205
-l78 0000617 00000205 00000207
-l78 0000620 00000207 00000216
-l78 0000623 00000228 0000023e
-l78 0000626 0000023e 0000025a
-l78 0000636 0000025a 00000270
-l78 0000652 00000270 0000028b
-l78 0000654 0000028b 000002d5
-l78 0000656 000002e1 000002e3
-l78 0000658 000002e3 00000306
-l78 0000660 0000030c 0000030e
+l78 0000628 000001db 000001f0
+l78 0000629 000001f0 00000205
+l78 0000630 00000205 00000207
+l78 0000633 00000207 00000216
+l78 0000636 00000228 0000023e
+l78 0000639 0000023e 0000025a
+l78 0000649 0000025a 00000270
+l78 0000665 00000270 0000028b
+l78 0000667 0000028b 000002d5
+l78 0000669 000002e1 000002e3
+l78 0000671 000002e3 00000306
+l78 0000673 0000030c 0000030e
 l64 0000485 0000030e 00000324
 l64 0000488 00000324 00000354
 l64 0000490 0000035a 00000386
