@@ -1,12 +1,8 @@
 void main()
 {
-    object oObject = GetFirstObjectInArea();
-	while(GetIsObjectValid(oObject))
-	{
-	    if(GetObjectType(oObject) == OBJECT_TYPE_PLACEABLE)
-		{
-		    SendMessageToPC(GetLastUsedBy(), GetName(oObject));
-		}
-	    oObject = GetNextObjectInArea();
-	}
+	object oUsedBy = GetLastUsedBy();
+	SetLocalObject(OBJECT_SELF, "TEST_OBJECT", oUsedBy);
+	ClearScriptParams();
+    AddScriptParameterInt(14);
+	ExecuteScriptEnhanced("ACR_CreatureBehavior", OBJECT_SELF);
 }
