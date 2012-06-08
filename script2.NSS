@@ -3,9 +3,9 @@
 void main()
 {
 	object oPC = GetLastUsedBy();
-	NotifyPlayer( oPC, int NOTIFY_TYPE_URGENT, "", "Urgent notification!", "This is sample full text of an urgent notification.");
-	NotifyPlayer( oPC, int NOTIFY_TYPE_ERROR, "", "Error notification!", "This is sample full text of an error notification.");
-	NotifyPlayer( oPC, int NOTIFY_TYPE_WARNING, "", "Warning notification!", "This is sample full text of a warning notification.");
-	NotifyPlayer( oPC, int NOTIFY_TYPE_INFO, "", "Info notification!", "This is sample full text of an info notification.");
-	NotifyPlayer( oPC, int NOTIFY_TYPE_TIP, "", "Tip notification!", "This is sample full text of a tip notification.");
+	NotifyPlayer( oPC, NOTIFY_TYPE_URGENT, "", "Urgent notification!", "This is sample full text of an urgent notification.");
+	NotifyPlayer( oPC, NOTIFY_TYPE_ERROR, "", "Error notification!", "This is sample full text of an error notification.");
+	NotifyPlayer( oPC, NOTIFY_TYPE_WARNING, "", "Warning notification!", "This is sample full text of a warning notification.");
+	NotifyPlayer( oPC, NOTIFY_TYPE_INFO, "", "Info notification!", "This is sample full text of an info notification.");
+	NotifyPlayer( oPC, NOTIFY_TYPE_TIP, "", "Tip notification!", "This is sample full text of a tip notification.");
 }
