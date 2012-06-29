@@ -8,4 +8,6 @@ void main()
 	NotifyPlayer( oPC, NOTIFY_TYPE_WARNING, "", "Warning notification!", "This is sample full text of a warning notification.");
 	NotifyPlayer( oPC, NOTIFY_TYPE_INFO, "", "Info notification!", "This is sample full text of an info notification.");
 	NotifyPlayer( oPC, NOTIFY_TYPE_TIP, "", "Tip notification!", "This is sample full text of a tip notification.");
+	
+	DisplayGuiScreen(oPC, "SCREEN_MODEBAR_2", FALSE, "modebar_2.xml");
 }
