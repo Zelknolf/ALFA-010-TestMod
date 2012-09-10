@@ -48,6 +48,8 @@
 
 void main() {
 
+	AddScriptParameterInt(100);
+	ExecuteScriptEnhanced("acr_creaturebehavior", OBJECT_SELF, TRUE);
 
     SetGlobalInt(_ACR_SETTINGS_SERVER_ID, 10);
 	SetGlobalInt(_ACR_SETTINGS_SERVER_REGION, 3559);
@@ -64,5 +66,4 @@ void main() {
 	DelayCommand(4.1, WriteTimestampedLogEntry("There is no spoon."));
 	
 	ExecuteScript("nwnx_craft_init", GetModule());
-
 }
