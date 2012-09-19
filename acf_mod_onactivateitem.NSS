@@ -65,6 +65,8 @@ void main() {
     object oOwner = GetItemPossessor(oItem);
     object oPC = oOwner;
 	
+	AssignCommand(oTarget, SendMessageToAllDMs(IntToString(GetTotalDamageDealt())));
+	
 	if (sItem == "009_it_devilweed")
 	{
 		effect DevilweedDMG = EffectAbilityDecrease (ABILITY_WISDOM, 2);
