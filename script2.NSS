@@ -4,17 +4,19 @@ void main()
 {
 	object oPC = GetLastUsedBy();
 	
-	if(!GetLocalInt(OBJECT_SELF, "FIRED_ONCE"))
+	if(GetLocalInt(OBJECT_SELF, "FIRED_ONCE"))
 	{
+		SendMessageToPC(oPC, "Attempting to initialize ACR_Candlekeep.");
 		AddScriptParameterInt(1);
-		IntToString(ExecuteScriptEnhanced("ACR_Candlekeep", oPC, FALSE));
+		SendMessageToPC(oPC, IntToString(ExecuteScriptEnhanced("ACR_Candlekeep", oPC, FALSE)));
 		ClearScriptParams();
 		SetLocalInt(OBJECT_SELF, "FIRED_ONCE", 1);
 	}
 	else
 	{
+		SendMessageToPC(oPC, "Attempting to write items to file.");
 		AddScriptParameterInt(100);
-		IntToString(ExecuteScriptEnhanced("ACR_Candlekeep", oPC, FALSE));
+		SendMessageToPC(oPC, IntToString(ExecuteScriptEnhanced("ACR_Candlekeep", oPC, FALSE)));
 		ClearScriptParams();	
 	}
 	
