@@ -48,13 +48,10 @@
 
 void main() {
 
-	AddScriptParameterInt(100);
-	ExecuteScriptEnhanced("acr_creaturebehavior", OBJECT_SELF, TRUE);
-
     SetGlobalInt(_ACR_SETTINGS_SERVER_ID, 10);
 	SetGlobalInt(_ACR_SETTINGS_SERVER_REGION, 3559);
 	SetGlobalString(_ACR_SETTINGS_SERVER_NAME, "ALFA 010 Baldur's Gate");
-	SetGlobalString(_ACR_SETTINGS_SERVER_IP, "giles.dynalias.org");
+	SetGlobalString(_ACR_SETTINGS_SERVER_IP, "localhost");
 	
     ACR_ModuleOnModuleLoad();
 
